@@ -1,0 +1,32 @@
+{
+  "name": "snyk-nodejs-agent",
+  "version": "0.1.0",
+  "description": "Snyk Node.js runtime agent",
+  "homepage": "https://github.com/snyk/snyk-nodejs-agent",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/snyk/snyk-nodejs-agent"
+  },
+  "main": "lib/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npm run lint && npm run test-functional",
+    "lint": "jscs `find ./lib -name '*.js'` -v && jscs `find ./test -name '*.js'` -v",
+    "test-functional": "tap `find ./test/functional -name '*.test.js'`",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "author": "snyk.io",
+  "devDependencies": {
+    "jscs": "^3.0.7",
+    "semantic-release": "^6.3.6",
+    "sinon": "^2.4.1",
+    "tap": "^10.3.2",
+    "tap-only": "0.0.5"
+  },
+  "dependencies": {
+    "acorn": "^5.7.1",
+    "needle": "^2.2.1"
+  }
+}
