@@ -1,5 +1,66 @@
 {
-    "st@0.2.4": {
-        "st.js" : ["getPath"]
+    "st": {
+        "st.js" : [
+            {
+            "name" : ["getPath"],
+            "semver": "<0.2.5"
+            }
+        ]
+    },
+    "superagent": {
+        "lib/node/index.js" : [
+            {
+            "name" : ["Request.prototype._end"],
+            "semver": "<3.7.0"
+            }
+        ]
+    },
+    "qs": {
+        "lib/parse.js" : [
+            {
+            "name": ["parseObject"],
+            "semver": "<6.3.2 >=6.3.0 || <6.2.3 >=6.2.0 || <6.1.2 >=6.1.0 || <6.0.4"
+            }
+        ]
+    },
+    "tough-cookie": { 
+        "lib/cookie.js" : [
+            {
+            "name" : ["Parse"],
+            "semver": "<2.3.3"
+            }  
+        ]
+    },
+    "uglify-js": {
+        "lib/parse.js" : [
+            {
+            "name": ["parse_js_numbers"],
+            "semver": "<2.6.0"
+            }
+        ]
+    },
+    "ms": {
+        "index.js" : [
+            {
+            "name": ["parse"],
+            "semver": "<2.0.0"
+            } 
+        ]
+    },
+    "handlebars": {
+        "lib/handelbars/utils.js" : [
+            {
+            "name": ["escapeExpression"],
+            "semver": ["<4.0.0"]
+            }
+        ]
+    },
+    "debug": {
+        "src/node.js" : [
+            {
+            "name": ["exports.formatters.o"],
+            "semver": ["<2.6.9 || >=3.0.0 <3.1.0"]
+            }
+        ]
     }
 }
