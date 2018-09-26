@@ -1,0 +1,6 @@
+{
+    "params": {
+        "scriptId": 1111,
+        "url": "./fixtures/st/node_modules/st.js"
+    }
+}
