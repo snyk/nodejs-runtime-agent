@@ -24,6 +24,7 @@
   "dependencies": {
     "acorn": "^5.7.1",
     "needle": "^2.2.1",
+    "semver": "^5.5.1",
     "sinon": "^6.1.5"
   },
   "publishConfig": {
