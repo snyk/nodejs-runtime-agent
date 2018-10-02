@@ -3,7 +3,7 @@ const test = require('tap').test;
 var ast = require('../lib/ast.js');
 
 test('test st method detection', function (t) {
-  var stPath = __dirname + '/fixtures/st/st.js';
+  var stPath = __dirname + '/fixtures/st/node_modules/st.js';
   var methods = ['Mount.prototype.getPath'];
   var line = 158;
   var found = ast.findAllVulnerableFunctionsInScriptPath(
