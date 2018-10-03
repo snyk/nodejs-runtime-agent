@@ -1,0 +1,6 @@
+Hello there!
+
+You've just triggered a vulnerable method in `st`, congratulations!
+
+This event is being recorded and will be sent to the homebase service shortly.
+Refresh this page to trigger the event once again.
