@@ -1,7 +1,7 @@
 // load the agent from the local project and start it
 require('../lib')({
   url: 'http://localhost:8000/api/v1/beacon',
-  projectId: 12345,
+  projectId: 'A3B8ADA9-B726-41E9-BC6B-5169F7F89A0C',
   debug: true,
 });
 
