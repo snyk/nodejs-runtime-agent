@@ -1,17 +1,17 @@
 {
-  "name": "@snyk/nodejs-agent",
+  "name": "@snyk/nodejs-runtime-agent",
   "description": "Snyk Node.js runtime agent",
-  "homepage": "https://github.com/snyk/nodejs-agent",
+  "homepage": "https://github.com/snyk/nodejs-runtime-agent",
   "repository": {
     "type": "git",
-    "url": "https://github.com/snyk/nodejs-agent"
+    "url": "https://github.com/snyk/nodejs-runtime-agent"
   },
-  "main": "demo/index.js",
+  "main": "lib/index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "start": "node .",
+    "start": "node demo/index.js",
     "test": "npm run lint && tap ./test/*.test.js -R spec",
     "lint": "eslint -c .eslintrc lib"
   },
