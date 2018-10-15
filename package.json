@@ -6,12 +6,12 @@
     "type": "git",
     "url": "https://github.com/snyk/nodejs-runtime-agent"
   },
-  "main": "demo/index.js",
+  "main": "lib/index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "start": "node .",
+    "start": "node demo/index.js",
     "test": "npm run lint && tap ./test/*.test.js -R spec",
     "lint": "eslint -c .eslintrc lib"
   },
