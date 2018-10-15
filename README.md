@@ -4,7 +4,7 @@ Use this package as a library in your application to monitor your dependencies a
 
 # Howto
 ```js
-require('@snyk/nodejs-agent')({
+require('@snyk/nodejs-runtime-agent')({
   url: 'https://homebase.snyk.io/api/v1/beacon',
   projectId: `your project ID from snyk.io`,
 });

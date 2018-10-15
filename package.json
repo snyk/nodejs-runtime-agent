@@ -1,10 +1,10 @@
 {
-  "name": "@snyk/nodejs-agent",
+  "name": "@snyk/nodejs-runtime-agent",
   "description": "Snyk Node.js runtime agent",
-  "homepage": "https://github.com/snyk/nodejs-agent",
+  "homepage": "https://github.com/snyk/nodejs-runtime-agent",
   "repository": {
     "type": "git",
-    "url": "https://github.com/snyk/nodejs-agent"
+    "url": "https://github.com/snyk/nodejs-runtime-agent"
   },
   "main": "demo/index.js",
   "directories": {
