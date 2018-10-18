@@ -30,7 +30,8 @@
     "acorn": "^5.7.1",
     "debug": "^4.0.1",
     "needle": "^2.2.1",
-    "semver": "^5.5.1"
+    "semver": "^5.5.1",
+    "uuid": "^3.3.2"
   },
   "publishConfig": {
     "access": "restricted"

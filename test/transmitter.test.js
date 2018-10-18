@@ -76,3 +76,25 @@ test('Transmitter prints errors on errors', async function(t) {
       nock.cleanAll();
     });
 });
+
+test('Transmitter loads some health-check information', async function (t) {
+  spy.resetHistory();
+
+  nock('http://host')
+    .post('/method')
+    .reply(function (url, bodyJson) {
+      const body = JSON.parse(bodyJson);
+      t.ok(body.correlationId, 'correlationId included');
+      t.ok(body.healthCheck, 'healthCheck flag included');
+      t.ok(body.systemInfo, 'some system info was sent');
+      t.ok(body.systemInfo.hostname, 'hostname included');
+      return [200, {}];
+    });
+  await transmitter.transmitHealthCheck('http://host/method', 'projectId')
+    .then(() => {
+      const calls = spy.getCalls();
+      t.equal(calls[0].args[0], 'Successfully transmitted health-check.');
+      t.end();
+      nock.cleanAll();
+    });
+});
