@@ -18,7 +18,7 @@
   "author": "snyk.io",
   "license": "private",
   "devDependencies": {
-    "eslint": "^4.19.1",
+    "eslint": "^5.7.0",
     "nock": "^10.0.0",
     "proxyquire": "^2.1.0",
     "sinon": "^6.1.5",
