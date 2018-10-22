@@ -1,5 +1,4 @@
 const test = require('tap').test;
-const sleep = require('sleep-promise');
 const proxyquire =  require('proxyquire');
 const nock = require('nock');
 
@@ -8,18 +7,15 @@ const spy = sinon.spy();
 const debugMock = (loggerType) => (msg) => {spy(msg);};
 const transmitter = proxyquire('../lib/transmitter', {'debug': debugMock});
 
-test('Transmitter prints nothing for no events', async function (t) {
-  await transmitter.transmitEvents('http://host/method', 'projectId');
-  t.equal(spy.getCalls().length, 0, 'no debug messages for no events');
-});
-
-test('Transmitter transmits nothing for no events', async function (t) {
+test('Transmitter transmits 0 events for no events', async function (t) {
   nock('http://host')
   .post('/method')
   .reply(200, {});
 
-  await transmitter.transmitEvents('http://host/method', 'some-project-id');
-  t.ok(!nock.isDone(), 'no transmission sent');
+  spy.resetHistory();
+
+  await transmitter.transmitEvents('http://host/method', 'some-project-id', 'some-agent-id');
+  t.ok(nock.isDone(), 'empty transmission sent');
   nock.cleanAll();
 });
 
@@ -31,10 +27,10 @@ test('Trasmitter prints success on transmitted events', async function(t) {
   transmitter.addEvent({foo: 'bar'});
   spy.resetHistory();
 
-  await transmitter.transmitEvents('http://host/method', 'some-project-id')
+  await transmitter.transmitEvents('http://host/method', 'some-project-id', 'some-agent-id')
     .then(() => {
       const calls = spy.getCalls();
-      t.equal(calls[0].args[0], 'Transmitting 1 events to http://host/method with project ID some-project-id.', 'printing count of transmitted events');
+      t.equal(calls[0].args[0], 'agent:some-agent-id transmitting 1 events to http://host/method with project ID some-project-id.', 'printing count of transmitted events');
       t.equal(calls[1].args[0], 'Successfully transmitted events.', 'printing count of transmitted events');
       t.end();
       nock.cleanAll();
@@ -49,10 +45,10 @@ test('Transmitter prints errors on non-OK http responses', async function(t) {
   transmitter.addEvent({foo: 'bar'});
   spy.resetHistory();
 
-  await transmitter.transmitEvents('http://host/method', 'some-project-id')
+  await transmitter.transmitEvents('http://host/method', 'some-project-id', 'some-agent-id')
     .then(() => {
       const calls = spy.getCalls();
-      t.equal(calls[0].args[0], 'Transmitting 1 events to http://host/method with project ID some-project-id.', 'printing count of transmitted events');
+      t.equal(calls[0].args[0], 'agent:some-agent-id transmitting 1 events to http://host/method with project ID some-project-id.', 'printing count of transmitted events');
       t.equal(calls[1].args[0], 'Unexpected response for events transmission: 404 : {"type":"Buffer","data":[]}', 'printing unexpected http responses');
       t.end();
       nock.cleanAll();
@@ -67,10 +63,10 @@ test('Transmitter prints errors on errors', async function(t) {
   transmitter.addEvent({foo: 'bar'});
   spy.resetHistory();
 
-  await transmitter.transmitEvents('http://host/method', 'some-project-id')
+  await transmitter.transmitEvents('http://host/method', 'some-project-id', 'some-agent-id')
     .then(() => {
       const calls = spy.getCalls();
-      t.equal(calls[0].args[0], 'Transmitting 1 events to http://host/method with project ID some-project-id.', 'printing count of transmitted events');
+      t.equal(calls[0].args[0], 'agent:some-agent-id transmitting 1 events to http://host/method with project ID some-project-id.', 'printing count of transmitted events');
       t.equal(calls[1].args[0], 'Error transmitting events: Error: network is down!', 'printing errors from needle');
       t.end();
       nock.cleanAll();
