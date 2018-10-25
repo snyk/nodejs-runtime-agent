@@ -9,5 +9,16 @@
     "version": [
       "<0.2.5"
     ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "st.js",
+      "methodName": "Mount.prototype.getCacheOptions"
+    },
+    "packageName": "st",
+    "version": [
+      "<0.2.5"
+    ]
   }
 ]
