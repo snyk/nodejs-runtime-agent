@@ -56,5 +56,8 @@ test('demo app reports a vuln method when called', async (t) => {
   // make sure all beacon calls were made
   t.ok(nock.isDone(), 'all beacon call were made');
 
+  delete process.env.SNYK_HOMEBASE_URL;
+  delete process.env.SNYK_BEACON_INTERVAL_MS;
+
   demoApp.close();
 });
