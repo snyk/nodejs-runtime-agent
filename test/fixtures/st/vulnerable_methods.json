@@ -1,16 +1,24 @@
-{
-    "st": {
-        "st.js" : [
-            {
-            "name" : ["Mount.prototype.getPath"],
-            "semver": ["<0.2.5"],
-            "id": "npm:st:20140206"
-            },
-            {
-            "name" : ["Mount.prototype.getCacheOptions"],
-            "semver": ["<0.2.5"],
-            "id": "npm:st:20140207"
-            }
-        ]
-    }
-}
+[
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "st.js",
+      "methodName": "Mount.prototype.getPath"
+    },
+    "packageName": "st",
+    "version": [
+      "<0.2.5"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "st.js",
+      "methodName": "Mount.prototype.getCacheOptions"
+    },
+    "packageName": "st",
+    "version": [
+      "<0.2.5"
+    ]
+  }
+]
