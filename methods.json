@@ -1,74 +1,220 @@
-{
-    "st": {
-        "st.js" : [
-            {
-            "name" : ["Mount.prototype.getPath"],
-            "semver": ["<0.2.5"],
-            "id": "npm:st:20140206"
-            }
-        ]
+[
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "st.js",
+      "methodName": "Mount.prototype.getPath"
     },
-    "superagent": {
-        "lib/node/index.js" : [
-            {
-            "name" : ["Request.prototype._end"],
-            "semver": ["<3.7.0"],
-            "id": "npm:superagent:20170807"
-            }
-        ]
+    "packageName": "st",
+    "version": [
+      "<0.2.5"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "src/lib/parse/regex.js",
+      "methodName": "weekdaysMinRegex"
     },
-    "qs": {
-        "lib/parse.js" : [
-            {
-            "name": ["parseObject"],
-            "semver": ["<6.3.2 >=6.3.0","<6.2.3 >=6.2.0","<6.1.2 >=6.1.","<6.0.4"],
-            "id": "npm:qs:20170213"
-            }
-        ]
+    "packageName": "moment",
+    "version": [
+      "<2.19.3"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "src/lib/parse/regex.js",
+      "methodName": "weekdaysShortRegex"
     },
-    "tough-cookie": {
-        "lib/cookie.js" : [
-            {
-            "name" : ["parse"],
-            "semver": ["<2.3.3"],
-            "id": "npm:tough-cookie:20170905"
-            }
-        ]
+    "packageName": "moment",
+    "version": [
+      "<2.19.3"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "src/lib/parse/regex.js",
+      "methodName": "weekdaysRegex"
     },
-    "uglify-js": {
-        "lib/parse.js" : [
-            {
-            "name": ["parse_js_number"],
-            "semver": ["<2.6.0"],
-            "id": "npm:uglify-js:20151024"
-            }
-        ]
+    "packageName": "moment",
+    "version": [
+      "<2.19.3"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "src/lib/parse/regex.js",
+      "methodName": "monthsRegex"
     },
-    "ms": {
-        "index.js" : [
-            {
-            "name": ["parse"],
-            "semver": ["<2.0.0"],
-            "id": "npm:ms:20170412"
-            }
-        ]
+    "packageName": "moment",
+    "version": [
+      "<2.19.3"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "src/lib/parse/regex.js",
+      "methodName": "monthsShortRegex"
     },
-    "handlebars": {
-        "lib/handelbars/utils.js" : [
-            {
-            "name": ["escapeExpression"],
-            "semver": ["<4.0.0"],
-            "id": "npm:handlebars:20151207"
-            }
-        ]
+    "packageName": "moment",
+    "version": [
+      "<2.19.3"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "lib/node/index.js",
+      "methodName": "Request.prototype._end"
     },
-    "debug": {
-        "src/node.js" : [
-            {
-            "name": ["exports.formatters.o"],
-            "semver": ["<2.6.9",">=3.0.0 <3.1.0"],
-            "id": "npm:debug:20170905"
-            }
-        ]
-    }
-}
+    "packageName": "superagent",
+    "version": [
+      "<3.7.0"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "src/node.js",
+      "methodName": "exports.formatters.o"
+    },
+    "packageName": "debug",
+    "version": [
+      "<2.6.9",
+      ">=3.0.0 <3.1.0"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "lib/cookie.js",
+      "methodName": "parse"
+    },
+    "packageName": "tough-cookie",
+    "version": [
+      "<2.3.3"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "index.js",
+      "methodName": "parse"
+    },
+    "packageName": "ms",
+    "version": [
+      "<2.0.0"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "lib/parse.js",
+      "methodName": "parseObject"
+    },
+    "packageName": "qs",
+    "version": [
+      "<6.3.2 >=6.3.0",
+      "<6.2.3 >=6.2.0",
+      "<6.1.2 >=6.1.0",
+      "<6.0.4"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "lib/handelbars/utils.js",
+      "methodName": "escapeExpression"
+    },
+    "packageName": "handlebars",
+    "version": [
+      "<4.0.0"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "lib/parse.js",
+      "methodName": "parse_js_numbers"
+    },
+    "packageName": "uglify-js",
+    "version": [
+      "<2.6.0"
+    ]
+  },
+  {
+    "methodId": {
+      "className": "RSAKeyPairGenerator",
+      "filePath": "org/bouncycastle/crypto/generators/RSAKeyPairGenerator.java",
+      "methodName": "chooseRandomPrime"
+    },
+    "packageName": "st",
+    "version": [
+      "[1.54,1.60)"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "packages/react-dom/src/server/DOMMarkupOperations.js",
+      "methodName": "createMarkupForProperty"
+    },
+    "packageName": "react-dom",
+    "version": [
+      ">=16.0.0 <16.0.1",
+      ">=16.1.0 <16.1.2",
+      ">=16.2.0 <16.2.1",
+      ">=16.3.0 <16.3.3",
+      ">=16.4.0 <16.4.2"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "stringstream.js",
+      "methodName": "StringStream.prototype.write"
+    },
+    "packageName": "stringstream",
+    "version": [
+      "<0.0.6"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "lib/index.js",
+      "methodName": "randomDigits"
+    },
+    "packageName": "cryptiles",
+    "version": [
+      "<4.1.2"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "lib/index.js",
+      "methodName": "randomDigits"
+    },
+    "packageName": "passport-saml",
+    "version": [
+      "<4.1.2"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "mime.js",
+      "methodName": "Mime.prototype.lookup"
+    },
+    "packageName": "mime",
+    "version": [
+      "<1.4.1",
+      ">=2.0.0 <2.0.3"
+    ]
+  }
+]
