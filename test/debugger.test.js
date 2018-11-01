@@ -30,7 +30,7 @@ test('test setting a breakpoint', function (t) {
   sinon.stub(moduleUtils, 'getModuleInfo').returns(
     {'version': '0.2.1','name': 'st', 'scriptRelativePath': 'st.js'}
   );
-  dbg.start();
+  dbg.init();
   vulnMgmt.setVulnerabiltiesMetadata(require('./fixtures/st/vulnerable_methods.json'));
   var stScriptInfo = require('./fixtures/st/script.json');
   var transmitterSpy = sinon.spy(transmitter, 'addEvent');
