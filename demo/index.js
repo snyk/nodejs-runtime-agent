@@ -5,6 +5,7 @@ require('../lib')({
   projectId: process.env.SNYK_PROJECT_ID || 'A3B8ADA9-B726-41E9-BC6B-5169F7F89A0C',
   beaconIntervalMs: process.env.SNYK_BEACON_INTERVAL_MS || 10000,
   enable: !process.env.SNYK_RUNTIME_AGENT_DISABLE,
+  snoozeMethodMs: process.env.SNYK_SNOOZE_METHOD_MS || 30 * 1000,
 });
 
 // create a server with a known vulnerability
