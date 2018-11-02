@@ -28,25 +28,20 @@ test('demo app reports a vuln method when called', async (t) => {
       t.ok(beaconData.agentId, 'agentId present in beacon data');
       t.ok(beaconData.eventsToSend, 'eventsToSend present in beacon data');
 
-      t.equal(beaconData.eventsToSend.length, 2, '2 events sent');
+      t.equal(beaconData.eventsToSend.length, 1, '1 events sent');
       const beaconEvent = beaconData.eventsToSend[0].methodEntry;
       t.ok(beaconEvent, 'method event sent');
       t.equal(beaconEvent.methodName, 'st.Mount.prototype.getPath', 'proper vulnerable method name');
       t.same(beaconEvent.coordinates, ['node:st:0.1.4'], 'proper vulnerable module coordinate');
       t.ok(beaconEvent.sourceUri.endsWith('/st.js'), 'proper vulnerable module script');
       t.ok(beaconEvent.sourceUri.includes(`node_modules${path.sep}st`), 'proper vulnerable module base dir');
-      const secondBeaconEvent = beaconData.eventsToSend[1].methodEntry;
-      t.ok(secondBeaconEvent, 'method event sent');
-      t.equal(secondBeaconEvent.methodName, 'mime.Mime.prototype.lookup', 'proper vulnerable method name');
-      t.same(secondBeaconEvent.coordinates, ['node:mime:1.2.11'], 'proper vulnerable module coordinate');
-      t.ok(secondBeaconEvent.sourceUri.endsWith('/mime.js'), 'proper vulnerable module script');
-      t.ok(secondBeaconEvent.sourceUri.includes(`node_modules${path.sep}st${path.sep}node_modules${path.sep}mime`), 'proper vulnerable module base dir');
     });
 
   const BEACON_INTERVAL_MS = 1000; // 1 sec agent beacon interval
   // configure agent in demo server via env vars
   process.env.SNYK_HOMEBASE_URL = 'http://localhost:8000/api/v1/beacon';
   process.env.SNYK_BEACON_INTERVAL_MS = BEACON_INTERVAL_MS;
+  process.env.SNYK_SNOOZE_METHOD_MS = 1000000;
 
   // bring up the demo server
   const demoApp = require('../demo');
@@ -65,6 +60,7 @@ test('demo app reports a vuln method when called', async (t) => {
 
   delete process.env.SNYK_HOMEBASE_URL;
   delete process.env.SNYK_BEACON_INTERVAL_MS;
+  delete process.env.SNYK_SNOOZE_METHOD_MS;
 
   demoApp.close();
 });
