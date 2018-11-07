@@ -16,7 +16,7 @@
     "lint": "eslint -c .eslintrc lib"
   },
   "author": "snyk.io",
-  "license": "private",
+  "license": "Proprietary; see LICENSE",
   "devDependencies": {
     "eslint": "^5.0.0",
     "nock": "^10.0.0",
