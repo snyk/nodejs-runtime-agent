@@ -2,12 +2,34 @@
   {
     "methodId": {
       "className": null,
-      "filePath": "st.js",
-      "methodName": "Mount.prototype.getPath"
+      "filePath": "lib/index.js",
+      "methodName": "cachedPathRelative"
     },
-    "packageName": "st",
+    "packageName": "cached-path-relative",
     "version": [
-      "<0.2.5"
+      "<1.0.2"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "index.js",
+      "methodName": "publish"
+    },
+    "packageName": "apex-publish-static-files",
+    "version": [
+      "<2.0.1"
+    ]
+  },
+  {
+    "methodId": {
+      "className": "tools",
+      "filePath": "lib/classes/tools.js",
+      "methodName": "block"
+    },
+    "packageName": "libnmap",
+    "version": [
+      "<0.4.16"
     ]
   },
   {
@@ -148,13 +170,13 @@
   },
   {
     "methodId": {
-      "className": "RSAKeyPairGenerator",
-      "filePath": "org/bouncycastle/crypto/generators/RSAKeyPairGenerator.java",
-      "methodName": "chooseRandomPrime"
+      "className": null,
+      "filePath": "st.js",
+      "methodName": "Mount.prototype.getPath"
     },
     "packageName": "st",
     "version": [
-      "[1.54,1.60)"
+      "<0.2.5"
     ]
   },
   {
@@ -197,6 +219,17 @@
   {
     "methodId": {
       "className": null,
+      "filePath": "index.js",
+      "methodName": "fresh"
+    },
+    "packageName": "fresh",
+    "version": [
+      "<0.5.2"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
       "filePath": "lib/index.js",
       "methodName": "randomDigits"
     },
@@ -215,6 +248,39 @@
     "version": [
       "<1.4.1",
       ">=2.0.0 <2.0.3"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "index.js",
+      "methodName": "createSocket"
+    },
+    "packageName": "tunnel-agent",
+    "version": [
+      "<0.6.0"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "lib/deep-extend.js",
+      "methodName": "cloneSpecificValue"
+    },
+    "packageName": "deep-extend",
+    "version": [
+      "<0.5.1"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "minimatch.js",
+      "methodName": "braceExpand"
+    },
+    "packageName": "minimatch",
+    "version": [
+      "<3.0.2"
     ]
   }
 ]
