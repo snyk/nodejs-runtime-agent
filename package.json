@@ -15,6 +15,18 @@
     "test": "npm run lint && tap ./test/*.test.js -R spec",
     "lint": "eslint -c .eslintrc lib"
   },
+  "keywords": [
+    "agent",
+    "instrumentation",
+    "monitor",
+    "monitoring",
+    "policy",
+    "runtime",
+    "secure",
+    "security",
+    "snyk",
+    "validate"
+  ],
   "author": "snyk.io",
   "license": "Proprietary; see LICENSE",
   "devDependencies": {
