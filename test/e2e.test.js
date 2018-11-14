@@ -13,6 +13,8 @@ test('demo app reports a vuln method when called', async (t) => {
       const beaconData = JSON.parse(requestBody);
       t.ok(beaconData.projectId, 'projectId present in beacon data');
       t.ok(beaconData.agentId, 'agentId present in beacon data');
+      t.ok(beaconData.systemInfo, 'systemInfo present in beacon data');
+      t.ok(!('error' in beaconData.systemInfo), 'systemInfo has no errors');
       t.ok(beaconData.eventsToSend, 'eventsToSend present in beacon data');
       t.equal(beaconData.eventsToSend.length, 1, 'one event sent');
       t.equal(beaconData.eventsToSend[0].methodEntry.methodName, 'mime.Mime.prototype.lookup', 'only vulnerability on startup is mime.lookup which st imports');
@@ -26,6 +28,8 @@ test('demo app reports a vuln method when called', async (t) => {
       const beaconData = JSON.parse(requestBody);
       t.ok(beaconData.projectId, 'projectId present in beacon data');
       t.ok(beaconData.agentId, 'agentId present in beacon data');
+      t.ok(beaconData.systemInfo, 'systemInfo present in beacon data');
+      t.ok(!('error' in beaconData.systemInfo), 'systemInfo has no errors');
       t.ok(beaconData.eventsToSend, 'eventsToSend present in beacon data');
 
       t.equal(beaconData.eventsToSend.length, 2, '2 events sent');
