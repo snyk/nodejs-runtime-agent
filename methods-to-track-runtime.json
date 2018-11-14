@@ -230,12 +230,12 @@
   {
     "methodId": {
       "className": null,
-      "filePath": "lib/index.js",
-      "methodName": "randomDigits"
+      "filePath": "lib/passport-saml/saml.js",
+      "methodName": "requestToUrl"
     },
     "packageName": "passport-saml",
     "version": [
-      "<4.1.2"
+      "*"
     ]
   },
   {
