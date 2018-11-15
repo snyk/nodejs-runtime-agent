@@ -4,7 +4,7 @@ var inspector = require('inspector');
 const EventEmitter = require('events');
 var dbg = require('../lib/debugger-wrapper');
 var vulnMgmt = require('../lib/vuln-mgmt');
-var moduleUtils = require('../lib/moduleUtils');
+var moduleUtils = require('../lib/module-utils');
 var transmitter = require('../lib/transmitter');
 
 class MockSession extends EventEmitter {
