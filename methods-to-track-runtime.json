@@ -2,6 +2,28 @@
   {
     "methodId": {
       "className": null,
+      "filePath": "lodash.js",
+      "methodName": "baseMergeDeep"
+    },
+    "packageName": "lodash",
+    "version": [
+      "<4.17.5"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "lodash.js",
+      "methodName": "baseMerge"
+    },
+    "packageName": "lodash",
+    "version": [
+      "<4.17.5"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
       "filePath": "lib/index.js",
       "methodName": "cachedPathRelative"
     },
