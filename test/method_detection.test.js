@@ -35,3 +35,19 @@ test('test uglify-js method detection', function (t) {
   t.equal(found[methods[0]].line, line, 'parse_js_number found');
   t.end();
 });
+
+test('test export = { f() {} } method detection', function (t) {
+  const contents = `
+module.exports = {
+  foo() {},
+  bar() {},
+};
+`;
+  const methods = ['module.exports.foo', 'module.exports.bar'];
+  const found = ast.findAllVulnerableFunctionsInScript(
+    contents, methods,
+  );
+  t.equal(found[methods[0]].line, 3, 'foo found');
+  t.equal(found[methods[1]].line, 4, 'bar found');
+  t.end();
+});
