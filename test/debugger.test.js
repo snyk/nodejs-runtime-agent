@@ -3,7 +3,7 @@ const sinon = require('sinon');
 const inspector = require('inspector');
 const EventEmitter = require('events');
 
-const vulnMgmt = require('../lib/vuln-mgmt');
+const snapshot = require('../lib/snapshot');
 const dbg = require('../lib/debugger-wrapper');
 const transmitter = require('../lib/transmitter');
 const moduleUtils = require('../lib/module-utils');
@@ -31,7 +31,7 @@ test('test setting a breakpoint', function (t) {
     {'version': '0.2.1','name': 'st', 'scriptRelativePath': 'st.js'}
   );
   dbg.init();
-  vulnMgmt.setVulnerabiltiesMetadata(require('./fixtures/st/vulnerable_methods.json'));
+  snapshot.setVulnerabiltiesMetadata(require('./fixtures/st/vulnerable_methods.json'));
   const stScriptInfo = require('./fixtures/st/script.json');
   const transmitterSpy = sinon.spy(transmitter, 'addEvent');
   stScriptInfo.params.url = __dirname + '/' + stScriptInfo.params.url;
