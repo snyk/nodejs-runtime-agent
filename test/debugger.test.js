@@ -27,9 +27,12 @@ class MockSession extends EventEmitter {
 test('test setting a breakpoint', function (t) {
   const mock = new MockSession();
   sinon.stub(inspector, 'Session').returns(mock);
-  sinon.stub(moduleUtils, 'getModuleInfo').returns(
-    {'version': '0.2.1','name': 'st', 'scriptRelativePath': 'st.js'}
-  );
+  sinon.stub(moduleUtils, 'getModuleInfo').returns({
+    'version': '0.2.1',
+    'name': 'st',
+    'scriptRelativePath': 'st.js',
+    'scriptPath': `${__dirname}/fixtures/st/node_modules/st.js`
+  });
   dbg.init();
   snapshot.setVulnerabiltiesMetadata(require('./fixtures/st/vulnerable_methods.json'));
   const stScriptInfo = require('./fixtures/st/script.json');
