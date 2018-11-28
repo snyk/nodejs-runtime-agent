@@ -17,7 +17,11 @@ class MockSession extends EventEmitter {
 
   post(method, params, cb) {
     if ((method === 'Debugger.setBreakpointByUrl') && (params.lineNumber === 158)) {
-      cb(undefined, {breakpointId: 'MY_BP_IDDD'});
+      cb(undefined, {breakpointId: 'getPath_BP_ID'});
+    } else if ((method === 'Debugger.setBreakpointByUrl') && (params.lineNumber == 187)) {
+      cb(undefined, {breakpointId: 'serve_BP_ID'});
+    } else if ((method === 'Debugger.setBreakpointByUrl') && (params.lineNumber == 179)) {
+      cb(undefined, {breakpointId: 'getUrl_BP_ID'});
     } else if ((method === 'Debugger.setBreakpointByUrl') && (params.lineNumber !== 158)) {
       cb({error: 'MY_ERROR_MESSAGE'}, undefined);
     };
@@ -39,9 +43,29 @@ test('test setting a breakpoint', function (t) {
   const transmitterSpy = sinon.spy(transmitter, 'addEvent');
   stScriptInfo.params.url = __dirname + '/' + stScriptInfo.params.url;
   mock.emit('Debugger.scriptParsed', stScriptInfo);
+
+  t.assert(stScriptInfo.params.url in dbg.scriptUrlToInstrumentedFunctions);
+  const monitoredFunctionsBefore = dbg.scriptUrlToInstrumentedFunctions[stScriptInfo.params.url];
+  t.equal(Object.keys(monitoredFunctionsBefore).length, 2, 'two monitored functions');
+  t.assert('Mount.prototype.getPath' in monitoredFunctionsBefore, 'getPath newly monitored');
+  t.equal(monitoredFunctionsBefore['Mount.prototype.getPath'], 'getPath_BP_ID');
+  t.assert('Mount.prototype.getUrl' in monitoredFunctionsBefore, 'getUrl newly monitored');
+  t.equal(monitoredFunctionsBefore['Mount.prototype.getUrl'], 'getUrl_BP_ID');
   t.assert('error' in transmitterSpy.args[0][0], 'Error event was added to transmitter');
   t.equal(1, transmitterSpy.callCount, 'Add event was call once because of set bp error');
-  t.equal(true, true, 'Mount.prototype.getPath found');
+
+  snapshot.setVulnerabiltiesMetadata(require('./fixtures/st/vulnerable_methods_new.json'));
+  dbg.instrumentScript(stScriptInfo.params.url);
+
+  t.assert(stScriptInfo.params.url in dbg.scriptUrlToInstrumentedFunctions);
+  const monitoredFunctionsAfter = dbg.scriptUrlToInstrumentedFunctions[stScriptInfo.params.url];
+  t.equal(Object.keys(monitoredFunctionsAfter).length, 2, 'two monitored functions');
+  t.assert('Mount.prototype.getPath' in monitoredFunctionsAfter, 'getPath still monitored');
+  t.equal(monitoredFunctionsAfter['Mount.prototype.getPath'], 'getPath_BP_ID');
+  t.assert('Mount.prototype.serve' in monitoredFunctionsAfter, 'serve newly monitored');
+  t.equal(monitoredFunctionsAfter['Mount.prototype.serve'], 'serve_BP_ID');
+  t.assert(!('Mount.prototype.getUrl' in monitoredFunctionsBefore), 'getUrl removed');
+
   t.end();
 });
 

@@ -15,12 +15,6 @@ test('demo app reports a vuln method when called', async (t) => {
       t.ok(beaconData.agentId, 'agentId present in beacon data');
       t.ok(beaconData.systemInfo, 'systemInfo present in beacon data');
       t.ok(!('error' in beaconData.systemInfo), 'systemInfo has no errors');
-      t.ok(beaconData.filters, 'filters present in beacon data');
-      t.equal(beaconData.filters.length, 2, 'two functions instrumented');
-      t.ok('methodName' in beaconData.filters[0], 'methodName in instrumented function info');
-      t.equal(beaconData.filters[0].methodName, 'Mount.prototype.getPath', 'correct methodName sent');
-      t.ok('methodName' in beaconData.filters[1], 'methodName in instrumented function info');
-      t.equal(beaconData.filters[1].methodName, 'Mime.prototype.lookup', 'correct methodName sent');
       t.ok(beaconData.eventsToSend, 'eventsToSend present in beacon data');
       t.equal(beaconData.eventsToSend.length, 1, 'one event sent');
       t.equal(beaconData.eventsToSend[0].methodEntry.methodName, 'mime.Mime.prototype.lookup', 'only vulnerability on startup is mime.lookup which st imports');
@@ -37,8 +31,6 @@ test('demo app reports a vuln method when called', async (t) => {
       t.ok(beaconData.systemInfo, 'systemInfo present in beacon data');
       t.ok(!('error' in beaconData.systemInfo), 'systemInfo has no errors');
       t.ok(beaconData.eventsToSend, 'eventsToSend present in beacon data');
-      t.ok(beaconData.filters, 'filters present in beacon data');
-      t.equal(beaconData.filters.length, 2, 'two functions instrumented');
 
       t.equal(beaconData.eventsToSend.length, 2, '2 events sent');
       const beaconEvent = beaconData.eventsToSend[0].methodEntry;
