@@ -24,7 +24,7 @@ class MockSession extends EventEmitter {
       cb(undefined, {breakpointId: 'getUrl_BP_ID'});
     } else if ((method === 'Debugger.setBreakpointByUrl') && (params.lineNumber !== 158)) {
       cb({error: 'MY_ERROR_MESSAGE'}, undefined);
-    };
+    }
   }
 }
 
