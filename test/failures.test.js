@@ -13,7 +13,7 @@ test('demo app reports a vuln method when called', async (t) => {
   const demoApp = proxyquire('../demo', {
     '../lib': proxyquire('../lib', {
       './debugger-wrapper': {
-        handlePeriodicTasks: () => {
+        resumeSnoozedBreakpoints: () => {
           throw new Error("periodic failure");
         },
       },
