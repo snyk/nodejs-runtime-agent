@@ -10,6 +10,7 @@ test('test st method detection', function (t) {
   const found = ast.findAllVulnerableFunctionsInScript(
     content, methods,
   );
+  t.same(sorted(Object.keys(found)), sorted(methods));
   t.equal(found[methods[0]].line, line, 'Mount.prototype.getPath found');
   t.end();
 });
@@ -21,6 +22,7 @@ test('test handlebars method detection', function (t) {
   const found = ast.findAllVulnerableFunctionsInScript(
     content, methods,
   );
+  t.same(sorted(Object.keys(found)), sorted(methods));
   t.equal(found[methods[0]].line, line, 'escapeExpression found');
   t.end();
 });
@@ -32,6 +34,7 @@ test('test uglify-js method detection', function (t) {
   const found = ast.findAllVulnerableFunctionsInScript(
     content, methods,
   );
+  t.same(sorted(Object.keys(found)), sorted(methods));
   t.equal(found[methods[0]].line, line, 'parse_js_number found');
   t.end();
 });
@@ -47,6 +50,7 @@ module.exports = {
   const found = ast.findAllVulnerableFunctionsInScript(
     contents, methods,
   );
+  t.same(sorted(Object.keys(found)), sorted(methods));
   t.equal(found[methods[0]].line, 3, 'foo found');
   t.equal(found[methods[1]].line, 4, 'bar found');
   t.end();
@@ -66,14 +70,34 @@ module.exports = Moog;
   const found = ast.findAllVulnerableFunctionsInScript(
     contents, methods,
   );
-  t.same(sorted(methods), sorted(Object.keys(found)));
+  t.same(sorted(Object.keys(found)), sorted(methods));
   t.equal(found[methods[0]].line, 3, 'constructor found');
-  t.equal(found[methods[1]].line, 5, 'sampleRate found');
-  t.equal(found[methods[2]].line, 4, 'lfo found');
+  t.equal(found[methods[1]].line, 4, 'sampleRate found');
+  t.equal(found[methods[2]].line, 5, 'lfo found');
+  t.end();
+});
+
+test('test lodash-CC-style function detection', function (t) {
+  const contents = `
+;(function() {
+  var runInContext = (function yellow(context) {
+    function baseMerge() {}
+  });
+  var _ = runInContext();
+})();
+`;
+  const methods = ['yellow.baseMerge'];
+  const found = ast.findAllVulnerableFunctionsInScript(
+    contents, methods,
+  );
+  t.same(sorted(Object.keys(found)), sorted(methods));
+  t.equal(found[methods[0]].line, 4, 'baseMerge found');
   t.end();
 });
 
 function sorted(list) {
-  list.sort();
-  return list;
+  const copy = [];
+  copy.push.apply(copy, list);
+  copy.sort();
+  return copy;
 }
