@@ -5,6 +5,8 @@ const sleep = require('sleep-promise');
 const path = require('path');
 
 test('demo app reports a vuln method when called', async (t) => {
+  const newSnapshotModificationDate = new Date();
+
   // first call will have one event triggered when the demo starts
   nock('http://localhost:8000')
     .post('/api/v1/beacon')
@@ -49,8 +51,17 @@ test('demo app reports a vuln method when called', async (t) => {
 
   // expecting a call to homebase for the newest snapshot
   nock('http://localhost:8000')
-    .get('/api/v1/snapshot/A3B8ADA9-B726-41E9-BC6B-5169F7F89A0C/js')
-    .reply(200, (uri, requestBody) => {
+    .matchHeader('if-modified-since', (val) => {
+      // making sure we got a Date here since I'm not sure what else to test in the 1st request
+      try {
+        new Date(val);
+        return true;
+      } catch (error) {
+        return false;
+      }
+    })
+    .get('/api/v1/snapshot/A3B8ADA9-B726-41E9-BC6B-5169F7F89A0C/node')
+    .reply(200, () => {
       const baseVulnerableFunctions = require('../functions-to-track-runtime.json');
       const newlyDiscoveredVulnerability = {
         methodId: {
@@ -64,7 +75,7 @@ test('demo app reports a vuln method when called', async (t) => {
       const newSnapshot = baseVulnerableFunctions;
       newSnapshot.push(newlyDiscoveredVulnerability);
       return newSnapshot;
-    }, {'If-Modified-Since': 1});
+    }, {'Last-Modified': newSnapshotModificationDate.toUTCString()});
 
   // third call will have three events because we updated the snapshot
   nock('http://localhost:8000')
@@ -88,12 +99,18 @@ test('demo app reports a vuln method when called', async (t) => {
     t.ok(methodNames.indexOf('mime.Mime.prototype.lookup') !== -1);
   });
 
+  // expecting next call to homebase for new snapshot to contain different If-Modified-Since header
+  nock('http://localhost:8000')
+    .matchHeader('if-modified-since', newSnapshotModificationDate.toUTCString())
+    .get('/api/v1/snapshot/A3B8ADA9-B726-41E9-BC6B-5169F7F89A0C/node')
+    .reply(304, 'OK or whatever', {'Last-Modified': newSnapshotModificationDate.toUTCString()});
+
   const BEACON_INTERVAL_MS = 1000; // 1 sec agent beacon interval
   const SNAPSHOT_INTERVAL_MS = 2500; // retrieve newer snapshot every 2.5 seconds
 
   // configure agent in demo server via env vars
   process.env.SNYK_HOMEBASE_URL = 'http://localhost:8000/api/v1/beacon';
-  process.env.SNYK_SNAPSHOT_URL = 'http://localhost:8000/api/v1/snapshot/A3B8ADA9-B726-41E9-BC6B-5169F7F89A0C/js';
+  process.env.SNYK_SNAPSHOT_URL = 'http://localhost:8000/api/v1/snapshot/A3B8ADA9-B726-41E9-BC6B-5169F7F89A0C/node';
   process.env.SNYK_BEACON_INTERVAL_MS = BEACON_INTERVAL_MS;
   process.env.SNYK_SNAPSHOT_INTERVAL_MS = SNAPSHOT_INTERVAL_MS;
   process.env.SNYK_TRIGGER_EXTRA_VULN = true;
@@ -118,6 +135,9 @@ test('demo app reports a vuln method when called', async (t) => {
 
   // wait to let the agent go through another cycle with a new snapshot
   await sleep(BEACON_INTERVAL_MS);
+
+  // wait to let the agent request another snapshot even though he has the latest
+  await sleep(SNAPSHOT_INTERVAL_MS);
 
   // make sure all beacon calls were made
   t.ok(nock.isDone(), 'all beacon call were made');
