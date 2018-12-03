@@ -77,6 +77,24 @@ module.exports = Moog;
   t.end();
 });
 
+test('test lodash-CC-style function detection', function (t) {
+  const contents = `
+;(function() {
+  var runInContext = (function yellow(context) {
+    function baseMerge() {}
+  });
+  var _ = runInContext();
+})();
+`;
+  const methods = ['yellow.baseMerge'];
+  const found = ast.findAllVulnerableFunctionsInScript(
+    contents, methods,
+  );
+  t.same(sorted(Object.keys(found)), sorted(methods));
+  t.equal(found[methods[0]].line, 4, 'baseMerge found');
+  t.end();
+});
+
 function sorted(list) {
   const copy = [];
   copy.push.apply(copy, list);
