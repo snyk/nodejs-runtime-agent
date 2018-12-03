@@ -5,7 +5,7 @@ const sleep = require('sleep-promise');
 const path = require('path');
 
 test('demo app reports a vuln method when called', async (t) => {
-  // first call will have no events
+  // first call will have one event triggered when the demo starts
   nock('http://localhost:8000')
     .post('/api/v1/beacon')
     .reply(200, (uri, requestBody) => {
@@ -20,7 +20,7 @@ test('demo app reports a vuln method when called', async (t) => {
       t.equal(beaconData.eventsToSend[0].methodEntry.methodName, 'mime.Mime.prototype.lookup', 'only vulnerability on startup is mime.lookup which st imports');
     });
 
-  // second call will have an event
+  // second call will have an additional event because we trigger the vuln method
   nock('http://localhost:8000')
     .post('/api/v1/beacon')
     .reply(200, (uri, requestBody) => {
@@ -47,10 +47,56 @@ test('demo app reports a vuln method when called', async (t) => {
       t.ok(secondBeaconEvent.sourceUri.includes(`node_modules${path.sep}st${path.sep}node_modules${path.sep}mime`), 'proper vulnerable module base dir');
     });
 
+  // expecting a call to homebase for the newest snapshot
+  nock('http://localhost:8000')
+    .get('/api/v1/snapshot/A3B8ADA9-B726-41E9-BC6B-5169F7F89A0C/js')
+    .reply(200, (uri, requestBody) => {
+      const baseVulnerableFunctions = require('../functions-to-track-runtime.json');
+      const newlyDiscoveredVulnerability = {
+        methodId: {
+          className: null,
+          filePath: 'st.js',
+          methodName: 'Mount.prototype.getUrl',
+        },
+        packageName: 'st',
+        version: ['<0.2.5'],
+      };
+      const newSnapshot = baseVulnerableFunctions;
+      newSnapshot.push(newlyDiscoveredVulnerability);
+      return newSnapshot;
+    }, {'If-Modified-Since': 1});
+
+  // third call will have three events because we updated the snapshot
+  nock('http://localhost:8000')
+  .post('/api/v1/beacon')
+  .reply(200, (uri, requestBody) => {
+    // assert the expected beacon data
+    const beaconData = JSON.parse(requestBody);
+    t.ok(beaconData.projectId, 'projectId present in beacon data');
+    t.ok(beaconData.agentId, 'agentId present in beacon data');
+    t.ok(beaconData.systemInfo, 'systemInfo present in beacon data');
+    t.ok(!('error' in beaconData.systemInfo), 'systemInfo has no errors');
+    t.ok(beaconData.eventsToSend, 'eventsToSend present in beacon data');
+
+    t.equal(beaconData.eventsToSend.length, 3, '3 events sent');
+    const methodNames = [];
+    methodNames.push(beaconData.eventsToSend[0].methodEntry.methodName);
+    methodNames.push(beaconData.eventsToSend[1].methodEntry.methodName);
+    methodNames.push(beaconData.eventsToSend[2].methodEntry.methodName);
+    t.ok(methodNames.indexOf('st.Mount.prototype.getPath') !== -1);
+    t.ok(methodNames.indexOf('st.Mount.prototype.getUrl') !== -1);
+    t.ok(methodNames.indexOf('mime.Mime.prototype.lookup') !== -1);
+  });
+
   const BEACON_INTERVAL_MS = 1000; // 1 sec agent beacon interval
+  const SNAPSHOT_INTERVAL_MS = 2500; // retrieve newer snapshot every 2.5 seconds
+
   // configure agent in demo server via env vars
   process.env.SNYK_HOMEBASE_URL = 'http://localhost:8000/api/v1/beacon';
+  process.env.SNYK_SNAPSHOT_URL = 'http://localhost:8000/api/v1/snapshot/A3B8ADA9-B726-41E9-BC6B-5169F7F89A0C/js';
   process.env.SNYK_BEACON_INTERVAL_MS = BEACON_INTERVAL_MS;
+  process.env.SNYK_SNAPSHOT_INTERVAL_MS = SNAPSHOT_INTERVAL_MS;
+  process.env.SNYK_TRIGGER_EXTRA_VULN = true;
 
   // bring up the demo server
   const demoApp = require('../demo');
@@ -64,11 +110,23 @@ test('demo app reports a vuln method when called', async (t) => {
   // wait to let the agent go through a cycle
   await sleep(BEACON_INTERVAL_MS);
 
+  // wait until we refresh the snapshot
+  await sleep(SNAPSHOT_INTERVAL_MS - BEACON_INTERVAL_MS * 2);
+
+  // trigger the vuln method again
+  await needle.get('http://localhost:3000/hello.txt');
+
+  // wait to let the agent go through another cycle with a new snapshot
+  await sleep(BEACON_INTERVAL_MS);
+
   // make sure all beacon calls were made
   t.ok(nock.isDone(), 'all beacon call were made');
 
   delete process.env.SNYK_HOMEBASE_URL;
+  delete process.env.SNYK_SNAPSHOT_URL;
   delete process.env.SNYK_BEACON_INTERVAL_MS;
+  delete process.env.SNYK_SNAPSHOT_INTERVAL_MS;
+  delete process.env.SNYK_TRIGGER_EXTRA_VULN;
 
   demoApp.close();
 });
