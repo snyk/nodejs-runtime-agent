@@ -55,7 +55,7 @@ test('test setting a breakpoint', function (t) {
   t.equal(1, transmitterSpy.callCount, 'Add event was call once because of set bp error');
 
   snapshotReader.setVulnerabiltiesMetadata(require('./fixtures/st/vulnerable_methods_new.json'));
-  dbg.instrumentScript(stScriptInfo.params.url);
+  dbg.refreshInstrumentation();
 
   t.assert(stScriptInfo.params.url in dbg.scriptUrlToInstrumentedFunctions);
   const monitoredFunctionsAfter = dbg.scriptUrlToInstrumentedFunctions[stScriptInfo.params.url];
