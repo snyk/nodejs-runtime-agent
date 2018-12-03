@@ -3,10 +3,10 @@ const sinon = require('sinon');
 const inspector = require('inspector');
 const EventEmitter = require('events');
 
-const snapshot = require('../lib/snapshot');
 const dbg = require('../lib/debugger-wrapper');
 const transmitter = require('../lib/transmitter');
 const moduleUtils = require('../lib/module-utils');
+const snapshotReader = require('../lib/snapshot/reader');
 
 class MockSession extends EventEmitter {
   constructor() {
@@ -38,7 +38,7 @@ test('test setting a breakpoint', function (t) {
     'scriptPath': `${__dirname}/fixtures/st/node_modules/st.js`
   });
   dbg.init();
-  snapshot.setVulnerabiltiesMetadata(require('./fixtures/st/vulnerable_methods.json'));
+  snapshotReader.setVulnerabiltiesMetadata(require('./fixtures/st/vulnerable_methods.json'));
   const stScriptInfo = require('./fixtures/st/script.json');
   const transmitterSpy = sinon.spy(transmitter, 'addEvent');
   stScriptInfo.params.url = __dirname + '/' + stScriptInfo.params.url;
@@ -54,7 +54,7 @@ test('test setting a breakpoint', function (t) {
   t.assert('error' in transmitterSpy.args[0][0], 'Error event was added to transmitter');
   t.equal(1, transmitterSpy.callCount, 'Add event was call once because of set bp error');
 
-  snapshot.setVulnerabiltiesMetadata(require('./fixtures/st/vulnerable_methods_new.json'));
+  snapshotReader.setVulnerabiltiesMetadata(require('./fixtures/st/vulnerable_methods_new.json'));
   dbg.instrumentScript(stScriptInfo.params.url);
 
   t.assert(stScriptInfo.params.url in dbg.scriptUrlToInstrumentedFunctions);
