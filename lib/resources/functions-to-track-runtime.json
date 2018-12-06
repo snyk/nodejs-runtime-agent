@@ -1,0 +1,329 @@
+[
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "mime.js",
+      "methodName": "Mime.prototype.lookup"
+    },
+    "packageName": "mime",
+    "version": [
+      "<1.4.1"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "lib/js.js",
+      "methodName": "module.exports"
+    },
+    "packageName": "inline-source",
+    "version": [
+      "<6.1.7"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "lodash.js",
+      "methodName": "baseMergeDeep"
+    },
+    "packageName": "lodash",
+    "version": [
+      "<4.17.5"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "lodash.js",
+      "methodName": "baseMerge"
+    },
+    "packageName": "lodash",
+    "version": [
+      "<4.17.5"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "lib/index.js",
+      "methodName": "cachedPathRelative"
+    },
+    "packageName": "cached-path-relative",
+    "version": [
+      "<1.0.2"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "index.js",
+      "methodName": "publish"
+    },
+    "packageName": "apex-publish-static-files",
+    "version": [
+      "<2.0.1"
+    ]
+  },
+  {
+    "methodId": {
+      "className": "tools",
+      "filePath": "lib/classes/tools.js",
+      "methodName": "block"
+    },
+    "packageName": "libnmap",
+    "version": [
+      "<0.4.16"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "src/lib/parse/regex.js",
+      "methodName": "weekdaysMinRegex"
+    },
+    "packageName": "moment",
+    "version": [
+      "<2.19.3"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "src/lib/parse/regex.js",
+      "methodName": "weekdaysShortRegex"
+    },
+    "packageName": "moment",
+    "version": [
+      "<2.19.3"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "src/lib/parse/regex.js",
+      "methodName": "weekdaysRegex"
+    },
+    "packageName": "moment",
+    "version": [
+      "<2.19.3"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "src/lib/parse/regex.js",
+      "methodName": "monthsRegex"
+    },
+    "packageName": "moment",
+    "version": [
+      "<2.19.3"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "src/lib/parse/regex.js",
+      "methodName": "monthsShortRegex"
+    },
+    "packageName": "moment",
+    "version": [
+      "<2.19.3"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "lib/node/index.js",
+      "methodName": "Request.prototype._end"
+    },
+    "packageName": "superagent",
+    "version": [
+      "<3.7.0"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "src/node.js",
+      "methodName": "exports.formatters.o"
+    },
+    "packageName": "debug",
+    "version": [
+      "<2.6.9",
+      ">=3.0.0 <3.1.0"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "lib/cookie.js",
+      "methodName": "parse"
+    },
+    "packageName": "tough-cookie",
+    "version": [
+      "<2.3.3"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "index.js",
+      "methodName": "parse"
+    },
+    "packageName": "ms",
+    "version": [
+      "<2.0.0"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "lib/parse.js",
+      "methodName": "parseObject"
+    },
+    "packageName": "qs",
+    "version": [
+      "<6.3.2 >=6.3.0",
+      "<6.2.3 >=6.2.0",
+      "<6.1.2 >=6.1.0",
+      "<6.0.4"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "lib/handlebars/utils.js",
+      "methodName": "escapeExpression"
+    },
+    "packageName": "handlebars",
+    "version": [
+      "<4.0.0"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "lib/parse.js",
+      "methodName": "parse_js_number"
+    },
+    "packageName": "uglify-js",
+    "version": [
+      "<2.6.0"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "st.js",
+      "methodName": "Mount.prototype.getPath"
+    },
+    "packageName": "st",
+    "version": [
+      "<0.2.5"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "packages/react-dom/src/server/DOMMarkupOperations.js",
+      "methodName": "createMarkupForProperty"
+    },
+    "packageName": "react-dom",
+    "version": [
+      ">=16.0.0 <16.0.1",
+      ">=16.1.0 <16.1.2",
+      ">=16.2.0 <16.2.1",
+      ">=16.3.0 <16.3.3",
+      ">=16.4.0 <16.4.2"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "stringstream.js",
+      "methodName": "StringStream.prototype.write"
+    },
+    "packageName": "stringstream",
+    "version": [
+      "<0.0.6"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "lib/index.js",
+      "methodName": "randomDigits"
+    },
+    "packageName": "cryptiles",
+    "version": [
+      "<4.1.2"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "index.js",
+      "methodName": "fresh"
+    },
+    "packageName": "fresh",
+    "version": [
+      "<0.5.2"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "lib/passport-saml/saml.js",
+      "methodName": "requestToUrl"
+    },
+    "packageName": "passport-saml",
+    "version": [
+      "*"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "Mime.js",
+      "methodName": "Mime.prototype.lookup"
+    },
+    "packageName": "mime",
+    "version": [
+      ">=2.0.0 <2.0.3"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "index.js",
+      "methodName": "createSocket"
+    },
+    "packageName": "tunnel-agent",
+    "version": [
+      "<0.6.0"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "lib/deep-extend.js",
+      "methodName": "cloneSpecificValue"
+    },
+    "packageName": "deep-extend",
+    "version": [
+      "<0.5.1"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "minimatch.js",
+      "methodName": "braceExpand"
+    },
+    "packageName": "minimatch",
+    "version": [
+      "<3.0.2"
+    ]
+  }
+]

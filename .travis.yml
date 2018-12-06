@@ -17,10 +17,16 @@ cache:
     - node_modules
 install:
   - npm install
-script:
-  - npm test
 jobs:
   include:
+    - stage: latest snapshot
+      script: curl $SNAPSHOT_URL > lib/resources/functions-to-track-runtime.json && date > lib/resources/build-date.json
+    - stage: npm test node 8
+      node_js: '8'
+      script: npm test
+    - stage: npm test node 10
+      node_js: '10'
+      script: npm test
     - stage: npm release
       if: branch = master AND type != pull_request
       node_js: '10'
