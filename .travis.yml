@@ -17,6 +17,12 @@ cache:
     - node_modules
 install:
   - npm install
+stages:
+  - latest snapshot
+  - npm test node 8
+  - npm test node 10
+  - name: npm release
+    if: branch = master AND type != pull_request
 jobs:
   include:
     - stage: latest snapshot
