@@ -18,13 +18,18 @@ cache:
 install:
   - npm install
 script:
+  - curl $SNAPSHOT_URL > lib/resources/functions.bundle.json
+  - node -e "console.log(new Date().toUTCString())" > lib/resources/build-date.bundle
   - npm test
 jobs:
   include:
     - stage: npm release
       if: branch = master AND type != pull_request
       node_js: '10'
-      script: npx semantic-release
+      script:
+        - curl $SNAPSHOT_URL > lib/resources/functions.bundle.json
+        - node -e "console.log(new Date().toUTCString())" > lib/resources/build-date.bundle
+        - npx semantic-release
 branches:
   only:
     - master
