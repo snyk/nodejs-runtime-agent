@@ -27,9 +27,6 @@ test('demo app reports a vuln method when called', async (t) => {
     .post('/api/v1/beacon')
     .reply(200, (uri, requestBody) => {
 
-      console.log('11111111111111111');
-      console.log(requestBody);
-      console.log('222222222222222222');
       // assert the expected beacon data
       const beaconData = JSON.parse(requestBody);
       t.ok(beaconData.projectId, 'projectId present in beacon data');
