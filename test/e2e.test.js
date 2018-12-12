@@ -26,6 +26,7 @@ test('demo app reports a vuln method when called', async (t) => {
   nock('http://localhost:8000')
     .post('/api/v1/beacon')
     .reply(200, (uri, requestBody) => {
+
       // assert the expected beacon data
       const beaconData = JSON.parse(requestBody);
       t.ok(beaconData.projectId, 'projectId present in beacon data');
@@ -62,7 +63,7 @@ test('demo app reports a vuln method when called', async (t) => {
     })
     .get('/api/v1/snapshot/A3B8ADA9-B726-41E9-BC6B-5169F7F89A0C/node')
     .reply(200, () => {
-      const baseVulnerableFunctions = require('../functions-to-track-runtime.json');
+      const baseVulnerableFunctions = require('../lib/resources/functions.repo.json');
       const newlyDiscoveredVulnerability = {
         methodId: {
           className: null,

@@ -1,0 +1,11 @@
+[
+  {
+  "methodId": {
+    "className": null,
+    "filePath": "bundle.js",
+    "methodName": "bundle.prototype.lookup"
+  },
+  "packageName": "bundle",
+  "version": ["<1.4.1"]
+  }
+]

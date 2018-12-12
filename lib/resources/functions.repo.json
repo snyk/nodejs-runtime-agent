@@ -2,6 +2,28 @@
   {
     "methodId": {
       "className": null,
+      "filePath": "mime.js",
+      "methodName": "Mime.prototype.lookup"
+    },
+    "packageName": "mime",
+    "version": [
+      "<1.4.1"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
+      "filePath": "lib/js.js",
+      "methodName": "module.exports"
+    },
+    "packageName": "inline-source",
+    "version": [
+      "<6.1.7"
+    ]
+  },
+  {
+    "methodId": {
+      "className": null,
       "filePath": "lodash.js",
       "methodName": "baseMergeDeep"
     },
@@ -171,7 +193,7 @@
   {
     "methodId": {
       "className": null,
-      "filePath": "lib/handelbars/utils.js",
+      "filePath": "lib/handlebars/utils.js",
       "methodName": "escapeExpression"
     },
     "packageName": "handlebars",
@@ -183,7 +205,7 @@
     "methodId": {
       "className": null,
       "filePath": "lib/parse.js",
-      "methodName": "parse_js_numbers"
+      "methodName": "parse_js_number"
     },
     "packageName": "uglify-js",
     "version": [
@@ -263,12 +285,11 @@
   {
     "methodId": {
       "className": null,
-      "filePath": "mime.js",
+      "filePath": "Mime.js",
       "methodName": "Mime.prototype.lookup"
     },
     "packageName": "mime",
     "version": [
-      "<1.4.1",
       ">=2.0.0 <2.0.3"
     ]
   },
