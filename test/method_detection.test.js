@@ -11,7 +11,7 @@ test('test st method detection', function (t) {
     content, methods,
   );
   t.same(sorted(Object.keys(found)), sorted(methods));
-  t.equal(found[methods[0]].line, line, 'Mount.prototype.getPath found');
+  t.equal(found[methods[0]].start.line, line, 'Mount.prototype.getPath found');
   t.end();
 });
 
@@ -23,7 +23,7 @@ test('test handlebars method detection', function (t) {
     content, methods,
   );
   t.same(sorted(Object.keys(found)), sorted(methods));
-  t.equal(found[methods[0]].line, line, 'escapeExpression found');
+  t.equal(found[methods[0]].start.line, line, 'escapeExpression found');
   t.end();
 });
 
@@ -35,7 +35,7 @@ test('test uglify-js method detection', function (t) {
     content, methods,
   );
   t.same(sorted(Object.keys(found)), sorted(methods));
-  t.equal(found[methods[0]].line, line, 'parse_js_number found');
+  t.equal(found[methods[0]].start.line, line, 'parse_js_number found');
   t.end();
 });
 
@@ -51,8 +51,8 @@ module.exports = {
     contents, methods,
   );
   t.same(sorted(Object.keys(found)), sorted(methods));
-  t.equal(found[methods[0]].line, 3, 'foo found');
-  t.equal(found[methods[1]].line, 4, 'bar found');
+  t.equal(found[methods[0]].start.line, 3, 'foo found');
+  t.equal(found[methods[1]].start.line, 4, 'bar found');
   t.end();
 });
 
@@ -71,13 +71,13 @@ module.exports = Moog;
     contents, methods,
   );
   t.same(sorted(Object.keys(found)), sorted(methods));
-  t.equal(found[methods[0]].line, 3, 'constructor found');
-  t.equal(found[methods[1]].line, 4, 'sampleRate found');
-  t.equal(found[methods[2]].line, 5, 'lfo found');
+  t.equal(found[methods[0]].start.line, 3, 'constructor found');
+  t.equal(found[methods[1]].start.line, 4, 'sampleRate found');
+  t.equal(found[methods[2]].start.line, 5, 'lfo found');
   t.end();
 });
 
-test('test lodash-CC-style function detection', function (t) {
+test('test inner function function detection', function (t) {
   const contents = `
 ;(function() {
   var runInContext = (function yellow(context) {
@@ -91,7 +91,25 @@ test('test lodash-CC-style function detection', function (t) {
     contents, methods,
   );
   t.same(sorted(Object.keys(found)), sorted(methods));
-  t.equal(found[methods[0]].line, 4, 'baseMerge found');
+  t.equal(found[methods[0]].start.line, 4, 'baseMerge found');
+  t.end();
+});
+
+test('test lodash-CC-style function detection', function (t) {
+  const contents = `
+;(function() {
+  var runInContext = (function yellow(context) {
+    function baseMerge() {}
+  });
+  var _ = runInContext();
+}.call(this));
+`;
+  const methods = ['yellow.baseMerge'];
+  const found = ast.findAllVulnerableFunctionsInScript(
+    contents, methods,
+  );
+  t.same(sorted(Object.keys(found)), sorted(methods));
+  t.equal(found[methods[0]].start.line, 4, 'baseMerge found');
   t.end();
 });
 
