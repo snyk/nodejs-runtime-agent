@@ -77,7 +77,7 @@ module.exports = Moog;
   t.end();
 });
 
-test('test lodash-CC-style function detection', function (t) {
+test('test inner function function detection', function (t) {
   const contents = `
 ;(function() {
   var runInContext = (function yellow(context) {
@@ -85,6 +85,24 @@ test('test lodash-CC-style function detection', function (t) {
   });
   var _ = runInContext();
 })();
+`;
+  const methods = ['yellow.baseMerge'];
+  const found = ast.findAllVulnerableFunctionsInScript(
+    contents, methods,
+  );
+  t.same(sorted(Object.keys(found)), sorted(methods));
+  t.equal(found[methods[0]].start.line, 4, 'baseMerge found');
+  t.end();
+});
+
+test('test lodash-CC-style function detection', function (t) {
+  const contents = `
+;(function() {
+  var runInContext = (function yellow(context) {
+    function baseMerge() {}
+  });
+  var _ = runInContext();
+}.call(this));
 `;
   const methods = ['yellow.baseMerge'];
   const found = ast.findAllVulnerableFunctionsInScript(
