@@ -16,13 +16,13 @@ class MockSession extends EventEmitter {
   connect() {};
 
   post(method, params, cb) {
-    if ((method === 'Debugger.setBreakpointByUrl') && (params.lineNumber === 158)) {
+    if ((method === 'Debugger.setBreakpointByUrl') && (params.lineNumber === 157)) {
       cb(undefined, {breakpointId: 'getPath_BP_ID'});
-    } else if ((method === 'Debugger.setBreakpointByUrl') && (params.lineNumber == 187)) {
+    } else if ((method === 'Debugger.setBreakpointByUrl') && (params.lineNumber == 186)) {
       cb(undefined, {breakpointId: 'serve_BP_ID'});
-    } else if ((method === 'Debugger.setBreakpointByUrl') && (params.lineNumber == 179)) {
+    } else if ((method === 'Debugger.setBreakpointByUrl') && (params.lineNumber == 178)) {
       cb(undefined, {breakpointId: 'getUrl_BP_ID'});
-    } else if ((method === 'Debugger.setBreakpointByUrl') && (params.lineNumber !== 158)) {
+    } else if ((method === 'Debugger.setBreakpointByUrl') && (params.lineNumber !== 157)) {
       cb({error: 'MY_ERROR_MESSAGE'}, undefined);
     }
   }
