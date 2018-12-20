@@ -9,13 +9,18 @@ require('../lib')({
   enable: !process.env.SNYK_RUNTIME_AGENT_DISABLE,
 });
 
+const fs = require('st/node_modules/graceful-fs');
+
 // start running some non-vulnerable function in the background
 // tests may hook into it to make it look vulnerable
 if (process.env.SNYK_TRIGGER_EXTRA_VULN) {
   setInterval(() => {
     try {
+      fs.close(1000);
       st.Mount.prototype.getUrl('whatever');
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    }
   }, 250).unref();
 }
 

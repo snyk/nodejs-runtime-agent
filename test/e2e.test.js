@@ -64,7 +64,7 @@ test('demo app reports a vuln method when called', async (t) => {
     .get('/api/v1/snapshot/A3B8ADA9-B726-41E9-BC6B-5169F7F89A0C/node')
     .reply(200, () => {
       const baseVulnerableFunctions = require('../lib/resources/functions.repo.json');
-      const newlyDiscoveredVulnerability = {
+      const newlyDiscoveredVulnerabilities = [{
         methodId: {
           className: null,
           filePath: 'st.js',
@@ -72,9 +72,17 @@ test('demo app reports a vuln method when called', async (t) => {
         },
         packageName: 'st',
         version: ['<0.2.5'],
-      };
+      }, {
+        methodId: {
+          className: null,
+          filePath: 'graceful-fs.js',
+          methodName: 'noop',
+        },
+        packageName: 'graceful-fs',
+        version: ['<1.3.0'],
+      }];
       const newSnapshot = baseVulnerableFunctions;
-      newSnapshot.push(newlyDiscoveredVulnerability);
+      newSnapshot.push.apply(newSnapshot, newlyDiscoveredVulnerabilities);
       return newSnapshot;
     }, {'Last-Modified': newSnapshotModificationDate.toUTCString()});
 
@@ -90,14 +98,12 @@ test('demo app reports a vuln method when called', async (t) => {
     t.ok(!('error' in beaconData.systemInfo), 'systemInfo has no errors');
     t.ok(beaconData.eventsToSend, 'eventsToSend present in beacon data');
 
-    t.equal(beaconData.eventsToSend.length, 3, '3 events sent');
-    const methodNames = [];
-    methodNames.push(beaconData.eventsToSend[0].methodEntry.methodName);
-    methodNames.push(beaconData.eventsToSend[1].methodEntry.methodName);
-    methodNames.push(beaconData.eventsToSend[2].methodEntry.methodName);
+    t.equal(beaconData.eventsToSend.length, 4, '4 events sent');
+    const methodNames = beaconData.eventsToSend.map((ev) => ev.methodEntry.methodName);
     t.ok(methodNames.indexOf('st.Mount.prototype.getPath') !== -1);
     t.ok(methodNames.indexOf('st.Mount.prototype.getUrl') !== -1);
     t.ok(methodNames.indexOf('mime.Mime.prototype.lookup') !== -1);
+    t.ok(methodNames.indexOf('graceful-fs.noop') !== -1);
   });
 
   // expecting next call to homebase for new snapshot to contain different If-Modified-Since header
