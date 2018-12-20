@@ -113,6 +113,21 @@ test('test lodash-CC-style function detection', function (t) {
   t.end();
 });
 
+test('test functions in naughty scripts', function (t) {
+  const contents = `
+function foo() {
+  return 0777;
+}
+`;
+  const methods = ['foo'];
+  const found = ast.findAllVulnerableFunctionsInScript(
+    contents, methods,
+  );
+  t.same(sorted(Object.keys(found)), sorted(methods));
+  t.equal(found[methods[0]].start.line, 2, 'foo found');
+  t.end();
+});
+
 function sorted(list) {
   const copy = [];
   copy.push.apply(copy, list);
