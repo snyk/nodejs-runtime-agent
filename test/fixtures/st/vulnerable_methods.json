@@ -1,9 +1,9 @@
 [
   {
-    "methodId": {
+    "functionId": {
       "className": null,
       "filePath": "st.js",
-      "methodName": "Mount.prototype.getPath"
+      "functionName": "Mount.prototype.getPath"
     },
     "packageName": "st",
     "version": [
@@ -11,10 +11,10 @@
     ]
   },
   {
-    "methodId": {
+    "functionId": {
       "className": null,
       "filePath": "st.js",
-      "methodName": "Mount.prototype.getCacheOptions"
+      "functionName": "Mount.prototype.getCacheOptions"
     },
     "packageName": "st",
     "version": [
@@ -22,10 +22,10 @@
     ]
   },
   {
-    "methodId": {
+    "functionId": {
       "className": null,
       "filePath": "st.js",
-      "methodName": "Mount.prototype.getUrl"
+      "functionName": "Mount.prototype.getUrl"
     },
     "packageName": "st",
     "version": [

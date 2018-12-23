@@ -10,10 +10,10 @@ config.initConfig({projectId: 'whatever'});
 
 test('snapshot reader defaults to repo snapshot when bundled is missing', async (t) => {
   const repoSnapshotStub = [{
-    "methodId": {
+    "functionId": {
       "className": null,
       "filePath": "mime.js",
-      "methodName": "Mime.prototype.lookup"
+      "functionName": "Mime.prototype.lookup"
     },
     "packageName": "mime",
     "version": ["<1.4.1"]
@@ -32,10 +32,10 @@ test('snapshot reader defaults to repo snapshot when bundled is missing', async 
 
 function readerFallsBackToRepoSnapshotWhenBundledError(t, bundledResponse) {
   const repoSnapshotStub = [{
-    "methodId": {
+    "functionId": {
       "className": null,
       "filePath": "mime.js",
-      "methodName": "Mime.prototype.lookup"
+      "functionName": "Mime.prototype.lookup"
     },
     "packageName": "mime",
     "version": ["<1.4.1"]
@@ -67,10 +67,10 @@ test('snapshot reader falls back to repo snapshot when bundled errors', async (t
 
 test('snapshot reader favours bundled snapshot when possible', async (t) => {
   const bundleSnapshotStub = [{
-    "methodId": {
+    "functionId": {
       "className": null,
       "filePath": "bundle.js",
-      "methodName": "bundle.prototype.lookup"
+      "functionName": "bundle.prototype.lookup"
     },
     "packageName": "bundle",
     "version": ["<1.4.1"]
