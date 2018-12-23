@@ -61,14 +61,14 @@ test('demo app reports a vuln method when called', async (t) => {
         return false;
       }
     })
-    .get('/api/v1/snapshot/A3B8ADA9-B726-41E9-BC6B-5169F7F89A0C/node')
+    .get('/api/v2/snapshot/A3B8ADA9-B726-41E9-BC6B-5169F7F89A0C/node')
     .reply(200, () => {
       const baseVulnerableFunctions = require('../lib/resources/functions.repo.json');
       const newlyDiscoveredVulnerability = {
-        methodId: {
+        functionId: {
           className: null,
           filePath: 'st.js',
-          methodName: 'Mount.prototype.getUrl',
+          functionName: 'Mount.prototype.getUrl',
         },
         packageName: 'st',
         version: ['<0.2.5'],
@@ -103,7 +103,7 @@ test('demo app reports a vuln method when called', async (t) => {
   // expecting next call to homebase for new snapshot to contain different If-Modified-Since header
   nock('http://localhost:8000')
     .matchHeader('if-modified-since', newSnapshotModificationDate.toUTCString())
-    .get('/api/v1/snapshot/A3B8ADA9-B726-41E9-BC6B-5169F7F89A0C/node')
+    .get('/api/v2/snapshot/A3B8ADA9-B726-41E9-BC6B-5169F7F89A0C/node')
     .reply(304, 'OK or whatever', {'Last-Modified': newSnapshotModificationDate.toUTCString()});
 
   const BEACON_INTERVAL_MS = 1000; // 1 sec agent beacon interval
@@ -111,7 +111,7 @@ test('demo app reports a vuln method when called', async (t) => {
 
   // configure agent in demo server via env vars
   process.env.SNYK_HOMEBASE_URL = 'http://localhost:8000/api/v1/beacon';
-  process.env.SNYK_SNAPSHOT_URL = 'http://localhost:8000/api/v1/snapshot/A3B8ADA9-B726-41E9-BC6B-5169F7F89A0C/node';
+  process.env.SNYK_SNAPSHOT_URL = 'http://localhost:8000/api/v2/snapshot/A3B8ADA9-B726-41E9-BC6B-5169F7F89A0C/node';
   process.env.SNYK_BEACON_INTERVAL_MS = BEACON_INTERVAL_MS;
   process.env.SNYK_SNAPSHOT_INTERVAL_MS = SNAPSHOT_INTERVAL_MS;
   process.env.SNYK_TRIGGER_EXTRA_VULN = true;

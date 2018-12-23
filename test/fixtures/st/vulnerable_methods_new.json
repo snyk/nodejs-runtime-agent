@@ -1,9 +1,9 @@
 [
   {
-    "methodId": {
+    "functionId": {
       "className": null,
       "filePath": "st.js",
-      "methodName": "Mount.prototype.getPath"
+      "functionName": "Mount.prototype.getPath"
     },
     "packageName": "st",
     "version": [
@@ -11,10 +11,10 @@
     ]
   },
   {
-    "methodId": {
+    "functionId": {
       "className": null,
       "filePath": "st.js",
-      "methodName": "Mount.prototype.serve"
+      "functionName": "Mount.prototype.serve"
     },
     "packageName": "st",
     "version": [
