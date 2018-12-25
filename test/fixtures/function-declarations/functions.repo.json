@@ -229,5 +229,137 @@
     "version": [
       "<4.1.2"
     ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "Moog.prototype.f"
+    },
+    "packageName": "class-member",
+    "version": [
+      "<4.1.2"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "module.exports.f0"
+    },
+    "packageName": "multiple-declarations-in-exports",
+    "version": [
+      "<4.1.2"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "module.exports.f1"
+    },
+    "packageName": "multiple-declarations-in-exports",
+    "version": [
+      "<4.1.2"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "module.exports.f2"
+    },
+    "packageName": "multiple-declarations-in-exports",
+    "version": [
+      "<4.1.2"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "module.exports.f3"
+    },
+    "packageName": "multiple-declarations-in-exports",
+    "version": [
+      "<4.1.2"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "module.exports.f4"
+    },
+    "packageName": "multiple-declarations-in-exports",
+    "version": [
+      "<4.1.2"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "module.exports.f5"
+    },
+    "packageName": "multiple-declarations-in-exports",
+    "version": [
+      "<4.1.2"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "module.exports.f6"
+    },
+    "packageName": "multiple-declarations-in-exports",
+    "version": [
+      "<4.1.2"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "module.exports.f7"
+    },
+    "packageName": "multiple-declarations-in-exports",
+    "version": [
+      "<4.1.2"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "module.exports.f8"
+    },
+    "packageName": "multiple-declarations-in-exports",
+    "version": [
+      "<4.1.2"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "module.exports.f9"
+    },
+    "packageName": "multiple-declarations-in-exports",
+    "version": [
+      "<4.1.2"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "module.exports.f"
+    },
+    "packageName": "one-liner-declaration-in-exports",
+    "version": [
+      "<4.1.2"
+    ]
   }
 ]
