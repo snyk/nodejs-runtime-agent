@@ -20,6 +20,11 @@ test('demo app reports a vuln method when called', async (t) => {
       t.ok(beaconData.eventsToSend, 'eventsToSend present in beacon data');
       t.equal(beaconData.eventsToSend.length, 1, 'one event sent');
       t.equal(beaconData.eventsToSend[0].methodEntry.methodName, 'mime.Mime.prototype.lookup', 'only vulnerability on startup is mime.lookup which st imports');
+      const expectedFilters = {
+        'st': {'st.js': {'Mount.prototype.getPath': null}},
+        'mime': {'mime.js': {'Mime.prototype.lookup': null}},
+      };
+      t.deepEqual(beaconData.filters, expectedFilters, 'instrumentation appears in beacon');
     });
 
   // second call will have an additional event because we trigger the vuln method
@@ -48,6 +53,11 @@ test('demo app reports a vuln method when called', async (t) => {
       t.same(secondBeaconEvent.coordinates, ['node:mime:1.2.11'], 'proper vulnerable module coordinate');
       t.ok(secondBeaconEvent.sourceUri.endsWith('/mime.js'), 'proper vulnerable module script');
       t.ok(secondBeaconEvent.sourceUri.includes(`node_modules${path.sep}st${path.sep}node_modules${path.sep}mime`), 'proper vulnerable module base dir');
+      const expectedFilters = {
+        'st': {'st.js': {'Mount.prototype.getPath': null}},
+        'mime': {'mime.js': {'Mime.prototype.lookup': null}},
+      };
+      t.deepEqual(beaconData.filters, expectedFilters, 'instrumentation appears in beacon');
     });
 
   // expecting a call to homebase for the newest snapshot
@@ -98,6 +108,11 @@ test('demo app reports a vuln method when called', async (t) => {
     t.ok(methodNames.indexOf('st.Mount.prototype.getPath') !== -1);
     t.ok(methodNames.indexOf('st.Mount.prototype.getUrl') !== -1);
     t.ok(methodNames.indexOf('mime.Mime.prototype.lookup') !== -1);
+    const expectedFilters = {
+      'st': {'st.js': {'Mount.prototype.getPath': null, 'Mount.prototype.getUrl': null}},
+      'mime': {'mime.js': {'Mime.prototype.lookup': null}},
+    };
+    t.deepEqual(beaconData.filters, expectedFilters, 'instrumentation appears in beacon');
   });
 
   // expecting next call to homebase for new snapshot to contain different If-Modified-Since header
