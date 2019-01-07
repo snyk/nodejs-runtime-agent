@@ -113,6 +113,23 @@ test('test lodash-CC-style function detection', function (t) {
   t.end();
 });
 
+test('test ws const arrow function detection', function (t) {
+  const contents = `
+const parse = (value) => {
+  console.log("hi!");
+};
+
+module.exports = { parse };
+`;
+  const methods = ['parse'];
+  const found = ast.findAllVulnerableFunctionsInScript(
+    contents, methods,
+  );
+  t.same(sorted(Object.keys(found)), sorted(methods));
+  t.equal(found[methods[0]].start.line, 2, 'parse found');
+  t.end();
+});
+
 function sorted(list) {
   const copy = [];
   copy.push.apply(copy, list);
