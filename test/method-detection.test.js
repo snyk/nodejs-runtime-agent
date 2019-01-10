@@ -3,6 +3,26 @@ const test = require('tap').test;
 
 const ast = require('../lib/ast.js');
 
+test('test bootstrap +function method detection', function (t) {
+  const contents = `
++function ($){
+  var Aye = function (one, two) {
+  }
+  Aye.prototype.foo = function (three) {
+  }
+  $.fn.aye = Aye
+}(jQuery);
+`;
+  const methods = ['Aye', 'Aye.prototype.foo'];
+  const found = ast.findAllVulnerableFunctionsInScript(
+    contents, methods,
+  );
+  t.same(sorted(Object.keys(found)), sorted(methods));
+  t.equal(found[methods[0]].start.line, 3, 'A found');
+  t.equal(found[methods[1]].start.line, 5, 'A.prototype.foo found');
+  t.end();
+});
+
 test('test st method detection', function (t) {
   const content = fs.readFileSync(__dirname + '/fixtures/st/node_modules/st.js');
   const methods = ['Mount.prototype.getPath'];
