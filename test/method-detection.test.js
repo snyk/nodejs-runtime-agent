@@ -23,6 +23,22 @@ test('test bootstrap +function method detection', function (t) {
   t.end();
 });
 
+test('test function body method detection', function (t) {
+  const contents = `
+function foo() {
+  function bar() {}
+}
+`;
+  const methods = ['foo', 'foo.bar'];
+  const found = ast.findAllVulnerableFunctionsInScript(
+    contents, methods,
+  );
+  t.same(sorted(Object.keys(found)), sorted(methods));
+  t.equal(found[methods[0]].start.line, 2, 'foo');
+  t.equal(found[methods[1]].start.line, 3, 'foo.bar');
+  t.end();
+});
+
 test('test st method detection', function (t) {
   const content = fs.readFileSync(__dirname + '/fixtures/st/node_modules/st.js');
   const methods = ['Mount.prototype.getPath'];
@@ -137,16 +153,18 @@ test('test ws const arrow function detection', function (t) {
   const contents = `
 const parse = (value) => {
   console.log("hi!");
+  function foo() {}
 };
 
 module.exports = { parse };
 `;
-  const methods = ['parse'];
+  const methods = ['parse', 'parse.foo'];
   const found = ast.findAllVulnerableFunctionsInScript(
     contents, methods,
   );
   t.same(sorted(Object.keys(found)), sorted(methods));
   t.equal(found[methods[0]].start.line, 2, 'parse found');
+  t.equal(found[methods[1]].start.line, 4, 'parse.foo found');
   t.end();
 });
 
