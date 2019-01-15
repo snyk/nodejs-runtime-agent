@@ -39,6 +39,21 @@ function foo() {
   t.end();
 });
 
+test('test anonymous function not splatting parent', function (t) {
+  const contents = `
+function foo() {
+  console.log(function() {});
+}
+`;
+  const methods = ['foo'];
+  const found = ast.findAllVulnerableFunctionsInScript(
+    contents, methods,
+  );
+  t.same(sorted(Object.keys(found)), sorted(methods));
+  t.equal(found[methods[0]].start.line, 2, 'foo');
+  t.end();
+});
+
 test('test st method detection', function (t) {
   const content = fs.readFileSync(__dirname + '/fixtures/st/node_modules/st.js');
   const methods = ['Mount.prototype.getPath'];
