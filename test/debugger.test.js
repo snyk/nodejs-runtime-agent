@@ -16,14 +16,22 @@ class MockSession extends EventEmitter {
   connect() {};
 
   post(method, params, cb) {
-    if ((method === 'Debugger.setBreakpointByUrl') && (params.lineNumber === 157)) {
-      cb(undefined, {breakpointId: 'getPath_BP_ID'});
-    } else if ((method === 'Debugger.setBreakpointByUrl') && (params.lineNumber == 186)) {
-      cb(undefined, {breakpointId: 'serve_BP_ID'});
-    } else if ((method === 'Debugger.setBreakpointByUrl') && (params.lineNumber == 178)) {
-      cb(undefined, {breakpointId: 'getUrl_BP_ID'});
-    } else if ((method === 'Debugger.setBreakpointByUrl') && (params.lineNumber !== 157)) {
-      cb({error: 'MY_ERROR_MESSAGE'}, undefined);
+    if ('Debugger.setBreakpointByUrl' !== method) {
+      return;
+    }
+
+    switch (params.lineNumber) {
+      case 157:
+        cb(undefined, {breakpointId: 'getPath_BP_ID'});
+        return;
+      case 186:
+        cb(undefined, {breakpointId: 'serve_BP_ID'});
+        return;
+      case 178:
+        cb(undefined, {breakpointId: 'getUrl_BP_ID'});
+        return;
+      default:
+        cb({error: `mocking has no mock for line number ${params.lineNumber}`}, undefined);
     }
   }
 }
@@ -46,7 +54,7 @@ test('test setting a breakpoint', function (t) {
 
   t.assert(stScriptInfo.params.url in dbg.scriptUrlToInstrumentedFunctions);
   const monitoredFunctionsBefore = dbg.scriptUrlToInstrumentedFunctions[stScriptInfo.params.url];
-  t.equal(Object.keys(monitoredFunctionsBefore).length, 2, 'two monitored functions');
+  t.equal(Object.keys(monitoredFunctionsBefore).length, 2, 'two monitored functions before');
   t.assert('Mount.prototype.getPath' in monitoredFunctionsBefore, 'getPath newly monitored');
   t.equal(monitoredFunctionsBefore['Mount.prototype.getPath'], 'getPath_BP_ID');
   t.assert('Mount.prototype.getUrl' in monitoredFunctionsBefore, 'getUrl newly monitored');
@@ -59,7 +67,7 @@ test('test setting a breakpoint', function (t) {
 
   t.assert(stScriptInfo.params.url in dbg.scriptUrlToInstrumentedFunctions);
   const monitoredFunctionsAfter = dbg.scriptUrlToInstrumentedFunctions[stScriptInfo.params.url];
-  t.equal(Object.keys(monitoredFunctionsAfter).length, 2, 'two monitored functions');
+  t.equal(Object.keys(monitoredFunctionsAfter).length, 2, 'two monitored functions after');
   t.assert('Mount.prototype.getPath' in monitoredFunctionsAfter, 'getPath still monitored');
   t.equal(monitoredFunctionsAfter['Mount.prototype.getPath'], 'getPath_BP_ID');
   t.assert('Mount.prototype.serve' in monitoredFunctionsAfter, 'serve newly monitored');
