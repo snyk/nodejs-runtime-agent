@@ -60,7 +60,7 @@ test('test setting a breakpoint', function (t) {
   t.assert('Mount.prototype.getUrl' in monitoredFunctionsBefore, 'getUrl newly monitored');
   t.equal(monitoredFunctionsBefore['Mount.prototype.getUrl'], 'getUrl_BP_ID');
   t.assert('error' in transmitterSpy.args[0][0], 'Error event was added to transmitter');
-  t.equal(1, transmitterSpy.callCount, 'Add event was call once because of set bp error');
+  t.equal(1, transmitterSpy.callCount, 'Add event was called once because of set bp error');
 
   snapshotReader.setVulnerabiltiesMetadata(require('./fixtures/st/vulnerable_methods_new.json'));
   dbg.refreshInstrumentation();
