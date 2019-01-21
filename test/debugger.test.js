@@ -74,6 +74,7 @@ test('test setting a breakpoint', function (t) {
   t.equal(monitoredFunctionsAfter['Mount.prototype.serve'], 'serve_BP_ID');
   t.assert(!('Mount.prototype.getUrl' in monitoredFunctionsBefore), 'getUrl removed');
 
+  transmitterSpy.restore();
   t.end();
 });
 
@@ -90,5 +91,15 @@ test('skip unnecessary debugger pauses', function (t) {
   const pauseContextWithBreakpoints = {reason: 'other', hitBreakpoints: ['breakpoint-id']};
   t.assert(!dbg.ignorePause(pauseContextWithBreakpoints));
 
+  t.end();
+});
+
+test('handle fuctions not instrumented', function (t) {
+  const transmitterSpy = sinon.spy(transmitter, 'addEvent');
+  snapshotReader.setVulnerabiltiesMetadata(require('./fixtures/st/vulnerable_methods_invalid.json'));
+  dbg.refreshInstrumentation();
+  t.assert('warning' in transmitterSpy.args[0][0], 'warning event was added to transmitter');
+  t.equal(1, transmitterSpy.callCount, 'Add event was called once because of missing function from source');
+  transmitterSpy.restore();
   t.end();
 });
