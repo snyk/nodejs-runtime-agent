@@ -2,6 +2,232 @@
   {
     "functionId": {
       "className": null,
+      "filePath": "lib/controllers/proxy.js",
+      "functionName": "module.exports.buildReqHandler.handler"
+    },
+    "packageName": "terriajs-server",
+    "version": [
+      "<2.7.4"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/mongodb.js",
+      "functionName": "MongoDB.prototype.buildWhere"
+    },
+    "packageName": "loopback-connector-mongodb",
+    "version": [
+      "<3.6.0"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/node/index.js",
+      "functionName": "Request.prototype.end"
+    },
+    "packageName": "superagent",
+    "version": [
+      "<3.4.0"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/parse.js",
+      "functionName": "parseObjectRecursive"
+    },
+    "packageName": "qs",
+    "version": [
+      ">=6.3.0 <6.3.2"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/parse.js",
+      "functionName": "parseObject"
+    },
+    "packageName": "qs",
+    "version": [
+      ">=6.2.0 <6.2.3"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/parse.js",
+      "functionName": "internals.parseObject"
+    },
+    "packageName": "qs",
+    "version": [
+      ">=6.1.0 <6.1.2"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "src/iter.ts",
+      "functionName": "iter"
+    },
+    "packageName": "rrule",
+    "version": [
+      "<2.6.0"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/key.js",
+      "functionName": "Key.parse"
+    },
+    "packageName": "sshpk",
+    "version": [
+      "<1.14.1"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "launchEditor.js",
+      "functionName": "launchEditor"
+    },
+    "packageName": "react-dev-utils",
+    "version": [
+      ">=1.0.0 <1.0.4",
+      ">=2.0.0 <2.0.2",
+      ">=3.0.0 <3.1.2",
+      ">=4.0.0 <4.2.2",
+      ">=5.0.0 <5.0.2"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "merge.js",
+      "functionName": "merge"
+    },
+    "packageName": "merge",
+    "version": [
+      "<1.2.1"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "src/ua-parser.js",
+      "functionName": "UAParser.getOS"
+    },
+    "packageName": "ua-parser-js",
+    "version": [
+      "<0.7.16"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "module.exports"
+    },
+    "packageName": "extend",
+    "version": [
+      "<2.0.2",
+      ">=3.0.0 <3.0.2"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/parsers.js",
+      "functionName": "module.exports"
+    },
+    "packageName": "braces",
+    "version": [
+      ">= 2.0.0 <2.3.1"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "src/ua-parser.js",
+      "functionName": "mapper.rgx"
+    },
+    "packageName": "ua-parser-js",
+    "version": [
+      "<0.7.18"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "src/exec.js",
+      "functionName": "_exec"
+    },
+    "packageName": "shelljs",
+    "version": [
+      "*"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/multipart.js",
+      "functionName": "Multipart.prototype.build.add"
+    },
+    "packageName": "request",
+    "version": [
+      ">2.2.5 <2.68.0"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/Extensions.js",
+      "functionName": "parse"
+    },
+    "packageName": "ws",
+    "version": [
+      "<1.1.5",
+      ">=2.0.0 <3.3.1"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/optimizer/validator.js",
+      "functionName": "validator"
+    },
+    "packageName": "clean-css",
+    "version": [
+      "<4.1.11"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "chownr.js",
+      "functionName": "chownr"
+    },
+    "packageName": "chownr",
+    "version": [
+      "*"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "module.exports.memoized.setData"
+    },
+    "packageName": "mem",
+    "version": [
+      "<4.0.0"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
       "filePath": "mime.js",
       "functionName": "Mime.prototype.lookup"
     },
@@ -25,7 +251,7 @@
     "functionId": {
       "className": null,
       "filePath": "lodash.js",
-      "functionName": "baseMergeDeep"
+      "functionName": "runInContext.baseMergeDeep"
     },
     "packageName": "lodash",
     "version": [
@@ -36,7 +262,7 @@
     "functionId": {
       "className": null,
       "filePath": "lodash.js",
-      "functionName": "baseMerge"
+      "functionName": "runInContext.baseMerge"
     },
     "packageName": "lodash",
     "version": [
@@ -58,7 +284,7 @@
     "functionId": {
       "className": null,
       "filePath": "index.js",
-      "functionName": "publish"
+      "functionName": "module.exports.publish"
     },
     "packageName": "apex-publish-static-files",
     "version": [
@@ -69,7 +295,7 @@
     "functionId": {
       "className": "tools",
       "filePath": "lib/classes/tools.js",
-      "functionName": "block"
+      "functionName": "tools.prototype.funcs"
     },
     "packageName": "libnmap",
     "version": [
@@ -79,7 +305,7 @@
   {
     "functionId": {
       "className": null,
-      "filePath": "src/lib/parse/regex.js",
+      "filePath": "moment.js",
       "functionName": "weekdaysMinRegex"
     },
     "packageName": "moment",
@@ -90,7 +316,7 @@
   {
     "functionId": {
       "className": null,
-      "filePath": "src/lib/parse/regex.js",
+      "filePath": "moment.js",
       "functionName": "weekdaysShortRegex"
     },
     "packageName": "moment",
@@ -101,7 +327,7 @@
   {
     "functionId": {
       "className": null,
-      "filePath": "src/lib/parse/regex.js",
+      "filePath": "moment.js",
       "functionName": "weekdaysRegex"
     },
     "packageName": "moment",
@@ -112,7 +338,7 @@
   {
     "functionId": {
       "className": null,
-      "filePath": "src/lib/parse/regex.js",
+      "filePath": "moment.js",
       "functionName": "monthsRegex"
     },
     "packageName": "moment",
@@ -123,7 +349,7 @@
   {
     "functionId": {
       "className": null,
-      "filePath": "src/lib/parse/regex.js",
+      "filePath": "moment.js",
       "functionName": "monthsShortRegex"
     },
     "packageName": "moment",
@@ -180,13 +406,10 @@
     "functionId": {
       "className": null,
       "filePath": "lib/parse.js",
-      "functionName": "parseObject"
+      "functionName": "internals.parseObject"
     },
     "packageName": "qs",
     "version": [
-      "<6.3.2 >=6.3.0",
-      "<6.2.3 >=6.2.0",
-      "<6.1.2 >=6.1.0",
       "<6.0.4"
     ]
   },
@@ -253,7 +476,7 @@
     "functionId": {
       "className": null,
       "filePath": "lib/index.js",
-      "functionName": "randomDigits"
+      "functionName": "exports.randomDigits"
     },
     "packageName": "cryptiles",
     "version": [
@@ -275,7 +498,7 @@
     "functionId": {
       "className": null,
       "filePath": "lib/passport-saml/saml.js",
-      "functionName": "requestToUrl"
+      "functionName": "SAML.prototype.requestToUrl.requestToUrlHelper"
     },
     "packageName": "passport-saml",
     "version": [
@@ -286,7 +509,7 @@
     "functionId": {
       "className": null,
       "filePath": "Mime.js",
-      "functionName": "Mime.prototype.lookup"
+      "functionName": "Mime.prototype.getType"
     },
     "packageName": "mime",
     "version": [
@@ -297,7 +520,7 @@
     "functionId": {
       "className": null,
       "filePath": "index.js",
-      "functionName": "createSocket"
+      "functionName": "TunnelingAgent.prototype.createSocket"
     },
     "packageName": "tunnel-agent",
     "version": [
