@@ -1,0 +1,35 @@
+[
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "st.js",
+      "functionName": "getPath"
+    },
+    "packageName": "st",
+    "version": [
+      "<0.2.5"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "St.js",
+      "functionName": "Mount.prototype.getCacheOptions"
+    },
+    "packageName": "st",
+    "version": [
+      "<0.2.5"
+    ]
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "st.js",
+      "functionName": "Mount.prototype.getUrl"
+    },
+    "packageName": "st",
+    "version": [
+      "<0.2.5"
+    ]
+  }
+]
