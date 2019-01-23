@@ -16,15 +16,16 @@ The `config` object supports the following options:
 
 | Key                | Type      | Default value                            | Purpose                                                                 |
 |--------------------|-----------|------------------------------------------|-------------------------------------------------------------------------|
-| `projectId`        | `String`  |                                          | The Snyk project ID that matches your application.                      |
-| `enable`           | `Boolean` | `true`                                   | Set to `false` to disable the agent.                                    |
+| `projectId`        | `String`  |                           | The Snyk project ID that matches your application.                         |
+| `enable`           | `Boolean` | `true`                    | Set to `false` to disable the agent.                                    |
 
 Advanced `config` options:
 
 | Key                  | Type      | Default value                                               | Purpose                                                                                    |
 |----------------------|-----------|-------------------------------------------------------------|--------------------------------------------------------------------------------------------|
-| `beaconIntervalMs`   | `Number`  | `60000`                                                     | Report frequency in milliseconds.                                                          |
-| `snapshotIntervalMs` | `Number`  | `3600000`                                                   | Snapshot retrieval frequency in milliseconds.                                              |
+| `beaconIntervalMs`   | `Number`  | `60000`                   | Report frequency in milliseconds.                                                          |
+| `snapshotIntervalMs` | `Number`  | `3600000`                 | Snapshot retrieval frequency in milliseconds.                                              |
+| `flushOnExit`        | `Boolean` | `true`                    | Set to `false` to prevent the agent from flushing its data before exiting. `true` is useful especially for short-lived environments.   |
 
 # Demo
 `npm start` to bring up an http server that invokes a vulnerable function on startup and for every request.
