@@ -10,6 +10,9 @@
   "directories": {
     "test": "test"
   },
+  "engines": {
+    "node": ">=8"
+  },
   "scripts": {
     "dump": "node test/dump.js",
     "start": "node demo/index.js",
