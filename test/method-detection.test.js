@@ -180,6 +180,21 @@ test('test moment-style wrapper detection', function (t) {
   t.end();
 });
 
+test('test octal parsing', function (t) {
+  const contents = `
+function foo() {
+  return 0777;
+}
+`;
+  const methods = ['foo'];
+  const found = ast.findAllVulnerableFunctionsInScript(
+    contents, methods,
+  );
+  t.same(sorted(Object.keys(found)), sorted(methods));
+  t.equal(found[methods[0]].start.line, 2, 'foo found');
+  t.end();
+});
+
 test('test ws const arrow function detection', function (t) {
   const contents = `
 const parse = (value) => {
