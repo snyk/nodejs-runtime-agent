@@ -28,4 +28,12 @@ Advanced `config` options:
 | `flushOnExit`        | `Boolean` | `true`                    | Set to `false` to prevent the agent from flushing its data before exiting. `true` is useful especially for short-lived environments.   |
 
 # Demo
-`npm start` to bring up an http server that invokes a vulnerable function on startup and for every request.
+
+There is a
+[self-contained demo named node-woof](https://github.com/snyk/node-woof#node-woof),
+which you can clone and run. It will guide you through the setup of the project on
+your machine.
+
+# Development
+`npm start` brings up an http server that invokes a vulnerable function
+on startup and for every request.
