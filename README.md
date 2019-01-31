@@ -1,4 +1,5 @@
 # Snyk Node.js runtime agent 
+[![Known Vulnerabilities](https://snyk.io/test/github/snyk/nodejs-runtime-agent/badge.svg?style=flat-square)](https://snyk.io/test/github/snyk/nodejs-runtime-agent)
 
 Use this package as a library in your application to monitor your dependencies and to learn how the vulnerable functions of the dependencies are invoked in your deployments.
 
