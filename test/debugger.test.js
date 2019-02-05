@@ -46,7 +46,7 @@ test('test setting a breakpoint', function (t) {
     'scriptPath': `${__dirname}/fixtures/st/node_modules/st.js`
   });
   dbg.init();
-  snapshotReader.setVulnerabiltiesMetadata(require('./fixtures/st/vulnerable_methods.json'));
+  snapshotReader.setVulnerabilitiesMetadata(require('./fixtures/st/vulnerable_methods.json'));
   const stScriptInfo = require('./fixtures/st/script.json');
   const transmitterSpy = sinon.spy(transmitter, 'addEvent');
   stScriptInfo.params.url = __dirname + '/' + stScriptInfo.params.url;
@@ -62,7 +62,7 @@ test('test setting a breakpoint', function (t) {
   t.assert('error' in transmitterSpy.args[0][0], 'Error event was added to transmitter');
   t.equal(1, transmitterSpy.callCount, 'Add event was called once because of set bp error');
 
-  snapshotReader.setVulnerabiltiesMetadata(require('./fixtures/st/vulnerable_methods_new.json'));
+  snapshotReader.setVulnerabilitiesMetadata(require('./fixtures/st/vulnerable_methods_new.json'));
   dbg.refreshInstrumentation();
 
   t.assert(stScriptInfo.params.url in dbg.scriptUrlToInstrumentedFunctions);
@@ -96,7 +96,7 @@ test('skip unnecessary debugger pauses', function (t) {
 
 test('handle fuctions not instrumented', function (t) {
   const transmitterSpy = sinon.spy(transmitter, 'addEvent');
-  snapshotReader.setVulnerabiltiesMetadata(require('./fixtures/st/vulnerable_methods_invalid.json'));
+  snapshotReader.setVulnerabilitiesMetadata(require('./fixtures/st/vulnerable_methods_invalid.json'));
   dbg.refreshInstrumentation();
   t.assert('warning' in transmitterSpy.args[0][0], 'warning event was added to transmitter');
   t.equal(1, transmitterSpy.callCount, 'Add event was called once because of missing function from source');
