@@ -20,6 +20,7 @@ test('demo app reports a vuln method when called', async (t) => {
       t.ok(beaconData.eventsToSend, 'eventsToSend present in beacon data');
       t.equal(beaconData.eventsToSend.length, 1, 'one event sent');
       t.equal(beaconData.eventsToSend[0].methodEntry.methodName, 'mime.Mime.prototype.lookup', 'only vulnerability on startup is mime.lookup which st imports');
+      t.ok(beaconData.eventsToSend[0].methodEntry.publicId, 'publicId present in beacon data');
       const expectedFilters = {
         'st': {'st.js': {'Mount.prototype.getPath': null}},
         'mime': {'mime.js': {'Mime.prototype.lookup': null}},
@@ -75,6 +76,7 @@ test('demo app reports a vuln method when called', async (t) => {
     .reply(200, () => {
       const baseVulnerableFunctions = require('../lib/resources/functions.repo.json');
       const newlyDiscoveredVulnerability = {
+        public_id: 'new-5',
         functionId: {
           className: null,
           filePath: 'st.js',

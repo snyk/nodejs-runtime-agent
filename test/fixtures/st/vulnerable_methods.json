@@ -1,5 +1,6 @@
 [
   {
+    "public_id": "vm-1",
     "functionId": {
       "className": null,
       "filePath": "st.js",
@@ -11,6 +12,7 @@
     ]
   },
   {
+    "public_id": "vm-2",
     "functionId": {
       "className": null,
       "filePath": "st.js",
@@ -22,6 +24,7 @@
     ]
   },
   {
+    "public_id": "vm-3",
     "functionId": {
       "className": null,
       "filePath": "st.js",

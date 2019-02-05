@@ -1,5 +1,6 @@
 [
   {
+    "public_id": "id-0",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -11,6 +12,7 @@
     ]
   },
   {
+    "public_id": "id-1",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -22,6 +24,7 @@
     ]
   },
   {
+    "public_id": "id-2",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -33,6 +36,7 @@
     ]
   },
   {
+    "public_id": "id-3",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -44,6 +48,7 @@
     ]
   },
   {
+    "public_id": "id-4",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -55,6 +60,7 @@
     ]
   },
   {
+    "public_id": "id-5",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -66,6 +72,7 @@
     ]
   },
   {
+    "public_id": "id-6",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -77,6 +84,7 @@
     ]
   },
   {
+    "public_id": "id-7",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -88,6 +96,7 @@
     ]
   },
   {
+    "public_id": "id-8",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -99,6 +108,7 @@
     ]
   },
   {
+    "public_id": "id-9",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -110,6 +120,7 @@
     ]
   },
   {
+    "public_id": "id-10",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -121,6 +132,7 @@
     ]
   },
   {
+    "public_id": "id-11",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -132,6 +144,7 @@
     ]
   },
   {
+    "public_id": "id-12",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -143,6 +156,7 @@
     ]
   },
   {
+    "public_id": "id-13",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -154,6 +168,7 @@
     ]
   },
   {
+    "public_id": "id-14",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -165,6 +180,7 @@
     ]
   },
   {
+    "public_id": "id-15",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -176,6 +192,7 @@
     ]
   },
   {
+    "public_id": "id-16",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -187,6 +204,7 @@
     ]
   },
   {
+    "public_id": "id-17",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -198,6 +216,7 @@
     ]
   },
   {
+    "public_id": "id-18",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -209,6 +228,7 @@
     ]
   },
   {
+    "public_id": "id-19",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -220,6 +240,7 @@
     ]
   },
   {
+    "public_id": "id-20",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -231,6 +252,7 @@
     ]
   },
   {
+    "public_id": "id-21",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -242,6 +264,7 @@
     ]
   },
   {
+    "public_id": "id-22",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -253,6 +276,7 @@
     ]
   },
   {
+    "public_id": "id-23",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -264,6 +288,7 @@
     ]
   },
   {
+    "public_id": "id-24",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -275,6 +300,7 @@
     ]
   },
   {
+    "public_id": "id-25",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -286,6 +312,7 @@
     ]
   },
   {
+    "public_id": "id-26",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -297,6 +324,7 @@
     ]
   },
   {
+    "public_id": "id-27",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -308,6 +336,7 @@
     ]
   },
   {
+    "public_id": "id-28",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -319,6 +348,7 @@
     ]
   },
   {
+    "public_id": "id-29",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -330,6 +360,7 @@
     ]
   },
   {
+    "public_id": "id-30",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -341,6 +372,7 @@
     ]
   },
   {
+    "public_id": "id-31",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -352,6 +384,7 @@
     ]
   },
   {
+    "public_id": "id-32",
     "functionId": {
       "className": null,
       "filePath": "index.js",

@@ -1,11 +1,14 @@
 [
   {
-  "functionId": {
-    "className": null,
-    "filePath": "bundle.js",
-    "functionName": "bundle.prototype.lookup"
-  },
-  "packageName": "bundle",
-  "version": ["<1.4.1"]
+    "public_id": "id-0",
+    "functionId": {
+      "className": null,
+      "filePath": "bundle.js",
+      "functionName": "bundle.prototype.lookup"
+    },
+    "packageName": "bundle",
+    "version": [
+      "<1.4.1"
+    ]
   }
 ]
