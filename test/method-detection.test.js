@@ -90,6 +90,23 @@ test('test uglify-js method detection', function (t) {
   t.end();
 });
 
+
+test('test explicit fake-anonymous function', function (t) {
+  const contents = `
+const foo = function bar() {
+  function baz() {}
+};
+`;
+  const methods = ['bar', 'bar.baz'];
+  const found = ast.findAllVulnerableFunctionsInScript(
+    contents, methods,
+  );
+  t.same(sorted(Object.keys(found)), sorted(methods));
+  t.equal(found[methods[0]].start.line, 2, 'bar found');
+  t.equal(found[methods[1]].start.line, 3, 'bar.baz found');
+  t.end();
+});
+
 test('test export = { f() {} } method detection', function (t) {
   const contents = `
 module.exports = {
@@ -192,6 +209,24 @@ function foo() {
   );
   t.same(sorted(Object.keys(found)), sorted(methods));
   t.equal(found[methods[0]].start.line, 2, 'foo found');
+  t.end();
+});
+
+test('test return expression parsing', function (t) {
+  const contents = `
+foo(function () {
+  return function bar() {
+    function baz() {}
+  }
+});
+`;
+  const methods = ['bar', 'bar.baz'];
+  const found = ast.findAllVulnerableFunctionsInScript(
+    contents, methods,
+  );
+  t.same(sorted(Object.keys(found)), sorted(methods));
+  t.equal(found[methods[0]].start.line, 3, 'bar found');
+  t.equal(found[methods[1]].start.line, 4, 'bar.baz found');
   t.end();
 });
 
