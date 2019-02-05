@@ -1,5 +1,42 @@
 [
   {
+    "public_id": "internal-correlation-25",
+    "functionId": {
+      "className": null,
+      "filePath": "lodash.js",
+      "functionName": "safeGet"
+    },
+    "packageName": "lodash",
+    "version": [
+      "<4.17.11"
+    ]
+  },
+  {
+    "public_id": "internal-correlation-34",
+    "functionId": {
+      "className": null,
+      "filePath": "lib/util/extract.js",
+      "functionName": "isSymlink"
+    },
+    "packageName": "bower",
+    "version": [
+      "<1.8.8"
+    ]
+  },
+  {
+    "public_id": "internal-correlation-43",
+    "functionId": {
+      "className": null,
+      "filePath": "lib/decompress-zip.js",
+      "functionName": "DecompressZip.prototype.extract"
+    },
+    "packageName": "decompress-zip",
+    "version": [
+      "<0.3.2"
+    ]
+  },
+  {
+    "public_id": "internal-correlation-52",
     "functionId": {
       "className": null,
       "filePath": "lib/controllers/proxy.js",
@@ -11,6 +48,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-61",
     "functionId": {
       "className": null,
       "filePath": "lib/mongodb.js",
@@ -22,6 +60,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-70",
     "functionId": {
       "className": null,
       "filePath": "lib/node/index.js",
@@ -33,6 +72,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-77",
     "functionId": {
       "className": null,
       "filePath": "lib/parse.js",
@@ -44,6 +84,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-106",
     "functionId": {
       "className": null,
       "filePath": "lib/parse.js",
@@ -55,6 +96,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-115",
     "functionId": {
       "className": null,
       "filePath": "lib/parse.js",
@@ -66,6 +108,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-124",
     "functionId": {
       "className": null,
       "filePath": "src/iter.ts",
@@ -77,6 +120,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-133",
     "functionId": {
       "className": null,
       "filePath": "lib/key.js",
@@ -88,6 +132,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-142",
     "functionId": {
       "className": null,
       "filePath": "launchEditor.js",
@@ -103,6 +148,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-151",
     "functionId": {
       "className": null,
       "filePath": "merge.js",
@@ -114,6 +160,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-160",
     "functionId": {
       "className": null,
       "filePath": "src/ua-parser.js",
@@ -125,6 +172,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-167",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -137,6 +185,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-176",
     "functionId": {
       "className": null,
       "filePath": "lib/parsers.js",
@@ -148,6 +197,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-205",
     "functionId": {
       "className": null,
       "filePath": "src/ua-parser.js",
@@ -159,6 +209,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-214",
     "functionId": {
       "className": null,
       "filePath": "src/exec.js",
@@ -170,6 +221,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-223",
     "functionId": {
       "className": null,
       "filePath": "lib/multipart.js",
@@ -181,6 +233,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-232",
     "functionId": {
       "className": null,
       "filePath": "lib/Extensions.js",
@@ -193,6 +246,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-241",
     "functionId": {
       "className": null,
       "filePath": "lib/optimizer/validator.js",
@@ -204,6 +258,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-250",
     "functionId": {
       "className": null,
       "filePath": "chownr.js",
@@ -215,6 +270,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-257",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -226,6 +282,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-266",
     "functionId": {
       "className": null,
       "filePath": "mime.js",
@@ -237,6 +294,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-275",
     "functionId": {
       "className": null,
       "filePath": "lib/js.js",
@@ -248,6 +306,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-304",
     "functionId": {
       "className": null,
       "filePath": "lodash.js",
@@ -259,6 +318,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-313",
     "functionId": {
       "className": null,
       "filePath": "lodash.js",
@@ -270,6 +330,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-322",
     "functionId": {
       "className": null,
       "filePath": "lib/index.js",
@@ -281,6 +342,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-331",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -292,6 +354,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-340",
     "functionId": {
       "className": "tools",
       "filePath": "lib/classes/tools.js",
@@ -303,6 +366,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-347",
     "functionId": {
       "className": null,
       "filePath": "moment.js",
@@ -314,6 +378,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-356",
     "functionId": {
       "className": null,
       "filePath": "moment.js",
@@ -325,6 +390,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-365",
     "functionId": {
       "className": null,
       "filePath": "moment.js",
@@ -336,6 +402,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-374",
     "functionId": {
       "className": null,
       "filePath": "moment.js",
@@ -347,6 +414,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-403",
     "functionId": {
       "className": null,
       "filePath": "moment.js",
@@ -358,6 +426,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-412",
     "functionId": {
       "className": null,
       "filePath": "lib/node/index.js",
@@ -369,6 +438,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-421",
     "functionId": {
       "className": null,
       "filePath": "src/node.js",
@@ -381,6 +451,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-430",
     "functionId": {
       "className": null,
       "filePath": "lib/cookie.js",
@@ -392,6 +463,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-437",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -403,6 +475,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-446",
     "functionId": {
       "className": null,
       "filePath": "lib/parse.js",
@@ -414,6 +487,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-455",
     "functionId": {
       "className": null,
       "filePath": "lib/handlebars/utils.js",
@@ -425,6 +499,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-464",
     "functionId": {
       "className": null,
       "filePath": "lib/parse.js",
@@ -436,6 +511,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-473",
     "functionId": {
       "className": null,
       "filePath": "st.js",
@@ -447,6 +523,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-502",
     "functionId": {
       "className": null,
       "filePath": "packages/react-dom/src/server/DOMMarkupOperations.js",
@@ -462,6 +539,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-511",
     "functionId": {
       "className": null,
       "filePath": "stringstream.js",
@@ -473,6 +551,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-520",
     "functionId": {
       "className": null,
       "filePath": "lib/index.js",
@@ -484,6 +563,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-527",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -495,6 +575,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-536",
     "functionId": {
       "className": null,
       "filePath": "lib/passport-saml/saml.js",
@@ -506,6 +587,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-545",
     "functionId": {
       "className": null,
       "filePath": "Mime.js",
@@ -517,6 +599,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-554",
     "functionId": {
       "className": null,
       "filePath": "index.js",
@@ -528,6 +611,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-563",
     "functionId": {
       "className": null,
       "filePath": "lib/deep-extend.js",
@@ -539,6 +623,7 @@
     ]
   },
   {
+    "public_id": "internal-correlation-572",
     "functionId": {
       "className": null,
       "filePath": "minimatch.js",
