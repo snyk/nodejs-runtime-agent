@@ -4,7 +4,7 @@ const inspector = require('inspector');
 const EventEmitter = require('events');
 
 const dbg = require('../lib/debugger-wrapper');
-const transmitter = require('../lib/transmitter');
+const state = require('../lib/state');
 const moduleUtils = require('../lib/module-utils');
 const snapshotReader = require('../lib/snapshot/reader');
 
@@ -48,7 +48,7 @@ test('test setting a breakpoint', function (t) {
   dbg.init();
   snapshotReader.setVulnerabiltiesMetadata(require('./fixtures/st/vulnerable_methods.json'));
   const stScriptInfo = require('./fixtures/st/script.json');
-  const transmitterSpy = sinon.spy(transmitter, 'addEvent');
+  const stateSpy = sinon.spy(state, 'addEvent');
   stScriptInfo.params.url = __dirname + '/' + stScriptInfo.params.url;
   mock.emit('Debugger.scriptParsed', stScriptInfo);
 
@@ -59,8 +59,8 @@ test('test setting a breakpoint', function (t) {
   t.equal(monitoredFunctionsBefore['Mount.prototype.getPath'], 'getPath_BP_ID');
   t.assert('Mount.prototype.getUrl' in monitoredFunctionsBefore, 'getUrl newly monitored');
   t.equal(monitoredFunctionsBefore['Mount.prototype.getUrl'], 'getUrl_BP_ID');
-  t.assert('error' in transmitterSpy.args[0][0], 'Error event was added to transmitter');
-  t.equal(1, transmitterSpy.callCount, 'Add event was called once because of set bp error');
+  t.assert('error' in stateSpy.args[0][0], 'Error event was added to state');
+  t.equal(1, stateSpy.callCount, 'Add event was called once because of set bp error');
 
   snapshotReader.setVulnerabiltiesMetadata(require('./fixtures/st/vulnerable_methods_new.json'));
   dbg.refreshInstrumentation();
@@ -74,7 +74,7 @@ test('test setting a breakpoint', function (t) {
   t.equal(monitoredFunctionsAfter['Mount.prototype.serve'], 'serve_BP_ID');
   t.assert(!('Mount.prototype.getUrl' in monitoredFunctionsBefore), 'getUrl removed');
 
-  transmitterSpy.restore();
+  stateSpy.restore();
   t.end();
 });
 
@@ -95,11 +95,11 @@ test('skip unnecessary debugger pauses', function (t) {
 });
 
 test('handle fuctions not instrumented', function (t) {
-  const transmitterSpy = sinon.spy(transmitter, 'addEvent');
+  const stateSpy = sinon.spy(state, 'addEvent');
   snapshotReader.setVulnerabiltiesMetadata(require('./fixtures/st/vulnerable_methods_invalid.json'));
   dbg.refreshInstrumentation();
-  t.assert('warning' in transmitterSpy.args[0][0], 'warning event was added to transmitter');
-  t.equal(1, transmitterSpy.callCount, 'Add event was called once because of missing function from source');
-  transmitterSpy.restore();
+  t.assert('warning' in stateSpy.args[0][0], 'warning event was added to state');
+  t.equal(1, stateSpy.callCount, 'Add event was called once because of missing function from source');
+  stateSpy.restore();
   t.end();
 });
