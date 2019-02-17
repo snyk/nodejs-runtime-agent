@@ -5,6 +5,7 @@ const nock = require('nock');
 const sinon = require('sinon');
 const spy = sinon.spy();
 const debugMock = (loggerType) => (msg) => {spy(msg);};
+const state = require('../lib/state');
 const transmitter = proxyquire('../lib/transmitter', {'debug': debugMock});
 
 test('Transmitter transmits 0 events for no events', async function (t) {
@@ -24,7 +25,7 @@ test('Trasmitter prints success on transmitted events', async function(t) {
   .post('/method')
   .reply(200, {});
 
-  transmitter.addEvent({foo: 'bar'});
+  state.addEvent({foo: 'bar'});
   spy.resetHistory();
 
   await transmitter.transmitEvents('http://host/method', 'some-project-id', 'some-agent-id')
@@ -42,7 +43,7 @@ test('Transmitter prints errors on non-OK http responses', async function(t) {
   .post('/method')
   .reply(404, (uri, requestBody) => {});
 
-  transmitter.addEvent({foo: 'bar'});
+  state.addEvent({foo: 'bar'});
   spy.resetHistory();
 
   await transmitter.transmitEvents('http://host/method', 'some-project-id', 'some-agent-id')
@@ -60,7 +61,7 @@ test('Transmitter prints errors on errors', async function(t) {
   .post('/method')
   .reply(404, (uri, requestBody) => {throw new Error('network is down!');});
 
-  transmitter.addEvent({foo: 'bar'});
+  state.addEvent({foo: 'bar'});
   spy.resetHistory();
 
   await transmitter.transmitEvents('http://host/method', 'some-project-id', 'some-agent-id')
