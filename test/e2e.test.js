@@ -25,6 +25,11 @@ test('demo app reports a vuln method when called', async (t) => {
         'mime': {'mime.js': {'Mime.prototype.lookup': null}},
       };
       t.deepEqual(beaconData.filters, expectedFilters, 'instrumentation appears in beacon');
+      t.ok(beaconData.loadedSources, 'loadedSources present in beacon data');
+      t.ok('st' in beaconData.loadedSources, 'st was loaded');
+      t.deepEqual(beaconData.loadedSources['st'], {'0.1.4': {}}, 'expected st version');
+      t.ok('mime' in beaconData.loadedSources, 'mime was loaded');
+      t.deepEqual(beaconData.loadedSources['mime'], {'1.2.11': {}}, 'expected mime version');
     });
 
   // second call will have an additional event because we trigger the vuln method
@@ -58,6 +63,11 @@ test('demo app reports a vuln method when called', async (t) => {
         'mime': {'mime.js': {'Mime.prototype.lookup': null}},
       };
       t.deepEqual(beaconData.filters, expectedFilters, 'instrumentation appears in beacon');
+      t.ok(beaconData.loadedSources, 'loadedSources present in beacon data');
+      t.ok('st' in beaconData.loadedSources, 'st was loaded');
+      t.deepEqual(beaconData.loadedSources['st'], {'0.1.4': {}}, 'expected st version');
+      t.ok('mime' in beaconData.loadedSources, 'mime was loaded');
+      t.deepEqual(beaconData.loadedSources['mime'], {'1.2.11': {}}, 'expected mime version');
     });
 
   // expecting a call to homebase for the newest snapshot
@@ -113,6 +123,11 @@ test('demo app reports a vuln method when called', async (t) => {
       'mime': {'mime.js': {'Mime.prototype.lookup': null}},
     };
     t.deepEqual(beaconData.filters, expectedFilters, 'instrumentation appears in beacon');
+    t.ok(beaconData.loadedSources, 'loadedSources present in beacon data');
+    t.ok('st' in beaconData.loadedSources, 'st was loaded');
+    t.deepEqual(beaconData.loadedSources['st'], {'0.1.4': {}}, 'expected st version');
+    t.ok('mime' in beaconData.loadedSources, 'mime was loaded');
+    t.deepEqual(beaconData.loadedSources['mime'], {'1.2.11': {}}, 'expected mime version');
   });
 
   // expecting next call to homebase for new snapshot to contain different If-Modified-Since header
