@@ -163,6 +163,23 @@ test('test inner function function detection', function (t) {
   t.end();
 });
 
+test('test literals in objects detection', function (t) {
+  const contents = `
+console.log({
+  1: function() { function foo() { } },
+  'foo-bar': function() { function foo_bar() { } },
+});
+`;
+  const methods = ['1.foo', 'foo-bar.foo_bar'];
+  const found = ast.findAllVulnerableFunctionsInScript(
+    contents, methods,
+  );
+  t.same(sorted(Object.keys(found)), sorted(methods));
+  t.equal(found[methods[0]].start.line, 3, 'foo found');
+  t.equal(found[methods[1]].start.line, 4, 'foo_bar found');
+  t.end();
+});
+
 test('test lodash-CC-style function detection', function (t) {
   const contents = `
 ;(function() {
