@@ -69,6 +69,34 @@ console.log([function() {
   t.end();
 });
 
+test('test named expression duplication', function (t) {
+  const contents = `
+console.log({
+  foo: function(outer) {
+    outer.exports = function yellow() {};
+  },
+  bar: function(outer) {
+    outer.exports = function green() {};
+  },
+});
+`;
+  const methods = [
+    'foo.outer.exports',
+    'foo.outer.exports.yellow',
+    'bar.outer.exports',
+    'bar.outer.exports.green',
+  ];
+  const found = ast.findAllVulnerableFunctionsInScript(
+    contents, methods,
+  );
+  t.same(sorted(Object.keys(found)), sorted(methods));
+  t.equal(found[methods[0]].start.line, 4, 'exp the first time');
+  t.equal(found[methods[1]].start.line, 4, 'exp.yellow');
+  t.equal(found[methods[2]].start.line, 7, 'exp again');
+  t.equal(found[methods[3]].start.line, 7, 'exp.green');
+  t.end();
+});
+
 test('test st method detection', function (t) {
   const content = fs.readFileSync(__dirname + '/fixtures/st/node_modules/st.js');
   const methods = ['Mount.prototype.getPath'];
