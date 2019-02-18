@@ -54,6 +54,21 @@ function foo() {
   t.end();
 });
 
+test('test array element inspection', function (t) {
+  const contents = `
+console.log([function() {
+  function foo() {}
+}]);
+`;
+  const methods = ['foo'];
+  const found = ast.findAllVulnerableFunctionsInScript(
+    contents, methods,
+  );
+  t.same(sorted(Object.keys(found)), sorted(methods));
+  t.equal(found[methods[0]].start.line, 3, 'foo');
+  t.end();
+});
+
 test('test st method detection', function (t) {
   const content = fs.readFileSync(__dirname + '/fixtures/st/node_modules/st.js');
   const methods = ['Mount.prototype.getPath'];
