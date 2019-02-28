@@ -69,6 +69,28 @@ console.log([function() {
   t.end();
 });
 
+test('test if body inspection', function (t) {
+  const contents = `
+if (console.singular) {
+  function foo() {}
+}
+if (console.both) {
+  function bar() {}
+} else {
+  function baz() {}
+}
+`;
+  const methods = ['bar', 'baz', 'foo'];
+  const found = ast.findAllVulnerableFunctionsInScript(
+    contents, methods,
+  );
+  t.same(sorted(Object.keys(found)), sorted(methods));
+  t.equal(found[methods[0]].start.line, 6, 'foo');
+  t.equal(found[methods[1]].start.line, 8, 'bar');
+  t.equal(found[methods[2]].start.line, 3, 'baz');
+  t.end();
+});
+
 test('test st method detection', function (t) {
   const content = fs.readFileSync(__dirname + '/fixtures/st/node_modules/st.js');
   const methods = ['Mount.prototype.getPath'];
