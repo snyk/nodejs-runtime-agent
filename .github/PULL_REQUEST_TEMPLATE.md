@@ -1,5 +1,6 @@
 - [ ] Ready for review
 - [ ] Follows CONTRIBUTING rules
+- [ ] Any changes involving paths support all path separators
 - [ ] Reviewed by Snyk internal team
 
 #### What does this PR do?
