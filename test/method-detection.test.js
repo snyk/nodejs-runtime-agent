@@ -23,6 +23,22 @@ test('test bootstrap +function method detection', function (t) {
   t.end();
 });
 
+
+test('test clashing variable/function declaration', function (t) {
+  const contents = `
+var foo;
+function foo() {
+}
+`;
+  const methods = ['foo'];
+  const found = ast.findAllVulnerableFunctionsInScript(
+    contents, methods,
+  );
+  t.same(sorted(Object.keys(found)), sorted(methods));
+  t.equal(found[methods[0]].start.line, 3, 'foo');
+  t.end();
+});
+
 test('test function body method detection', function (t) {
   const contents = `
 function foo() {

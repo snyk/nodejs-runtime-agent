@@ -2,13 +2,908 @@
   {
     "functionId": {
       "className": null,
+      "filePath": "ejs.js",
+      "functionName": "1.exports.render"
+    },
+    "packageName": "ejs",
+    "version": [
+      "<2.2.1"
+    ],
+    "vulnId": "npm:ejs:20161128"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/ejs.js",
+      "functionName": "exports.render"
+    },
+    "packageName": "ejs",
+    "version": [
+      "<2.2.1"
+    ],
+    "vulnId": "npm:ejs:20161128"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/growl.js",
+      "functionName": "exports.notify"
+    },
+    "packageName": "growl",
+    "version": [
+      "<1.4.0"
+    ],
+    "vulnId": "npm:growl:20160721"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "ua-parser.js",
+      "functionName": "mapper.regex"
+    },
+    "packageName": "ua-parser-js",
+    "version": [
+      ">=0.4.0 <0.5.15"
+    ],
+    "vulnId": "npm:ua-parser-js:20180227"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "src/ua-parser.js",
+      "functionName": "mapper.regex"
+    },
+    "packageName": "ua-parser-js",
+    "version": [
+      "=0.5.20"
+    ],
+    "vulnId": "npm:ua-parser-js:20180227"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "dist/handlebars.js",
+      "functionName": "JavaScriptCompiler.Handlebars.JavaScriptCompiler"
+    },
+    "packageName": "handlebars",
+    "version": [
+      ">=1.0.6 <=1.0.12"
+    ],
+    "vulnId": "SNYK-JS-HANDLEBARS-173692"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "ejs.js",
+      "functionName": "1.cpOptsInData"
+    },
+    "packageName": "ejs",
+    "version": [
+      ">=2.2.1 <2.5.3"
+    ],
+    "vulnId": "npm:ejs:20161128"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "ms.js",
+      "functionName": "parse"
+    },
+    "packageName": "ms",
+    "version": [
+      ">0.1.0 <=0.3.0"
+    ],
+    "vulnId": "npm:ms:20170412"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "main.js",
+      "functionName": "Request.prototype.request"
+    },
+    "packageName": "request",
+    "version": [
+      ">=2.2.6 <2.9.150"
+    ],
+    "vulnId": "npm:request:20160119"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "main.js",
+      "functionName": "Request.prototype.multipart"
+    },
+    "packageName": "request",
+    "version": [
+      ">=2.9.150 <2.16.0"
+    ],
+    "vulnId": "npm:request:20160119"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "Request.prototype.multipart"
+    },
+    "packageName": "request",
+    "version": [
+      ">=2.16.0 <2.27.0"
+    ],
+    "vulnId": "npm:request:20160119"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "request.js",
+      "functionName": "Request.prototype.multipart"
+    },
+    "packageName": "request",
+    "version": [
+      ">=2.27.0 <2.54.0"
+    ],
+    "vulnId": "npm:request:20160119"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "cjs/react-dom-server.node.development.js",
+      "functionName": "DOMMarkupOperations.createMarkupForProperty"
+    },
+    "packageName": "react-dom",
+    "version": [
+      "16.0.0"
+    ],
+    "vulnId": "npm:react-dom:20180802"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "cjs/react-dom-server.browser.development.js",
+      "functionName": "DOMMarkupOperations.createMarkupForProperty"
+    },
+    "packageName": "react-dom",
+    "version": [
+      "16.0.0"
+    ],
+    "vulnId": "npm:react-dom:20180802"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "cjs/react-dom-server.node.development.js",
+      "functionName": "createMarkupForProperty"
+    },
+    "packageName": "react-dom",
+    "version": [
+      ">=16.0.0 <16.0.1",
+      ">=16.1.0 <16.1.2",
+      ">=16.2.0 <16.2.1",
+      ">=16.3.0 <16.3.3",
+      ">=16.4.0 <16.4.2"
+    ],
+    "vulnId": "npm:react-dom:20180802"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "cjs/react-dom-server.browser.development.js",
+      "functionName": "createMarkupForProperty"
+    },
+    "packageName": "react-dom",
+    "version": [
+      ">=16.0.0 <16.0.1",
+      ">=16.1.0 <16.1.2",
+      ">=16.2.0 <16.2.1",
+      ">=16.3.0 <16.3.3",
+      ">=16.4.0 <16.4.2"
+    ],
+    "vulnId": "npm:react-dom:20180802"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "dist/lodash.js",
+      "functionName": "merge"
+    },
+    "packageName": "lodash",
+    "version": [
+      ">=1.0.0 <1.0.3"
+    ],
+    "vulnId": "SNYK-JS-LODASH-73638"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "dist/lodash.js",
+      "functionName": "merge"
+    },
+    "packageName": "lodash",
+    "version": [
+      ">= 1.0.0 <1.0.3"
+    ],
+    "vulnId": "npm:lodash:20180130"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "mime.js",
+      "functionName": "mime.module.exports.lookup"
+    },
+    "packageName": "mime",
+    "version": [
+      "<1.2.6"
+    ],
+    "vulnId": "npm:mime:20170907"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "padString"
+    },
+    "packageName": "base64url",
+    "version": [
+      "<=1.0.6"
+    ],
+    "vulnId": "npm:base64url:20180511"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "deepExtend"
+    },
+    "packageName": "deep-extend",
+    "version": [
+      "<0.2.1"
+    ],
+    "vulnId": "npm:deep-extend:20180409"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "module.exports"
+    },
+    "packageName": "deep-extend",
+    "version": [
+      "0.2.1"
+    ],
+    "vulnId": "npm:deep-extend:20180409"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "module.exports.deepExtend"
+    },
+    "packageName": "deep-extend",
+    "version": [
+      ">=0.2.2 <0.2.5"
+    ],
+    "vulnId": "npm:deep-extend:20180409"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "deepExtend.module.exports"
+    },
+    "packageName": "deep-extend",
+    "version": [
+      ">=0.2.5 <0.4.0"
+    ],
+    "vulnId": "npm:deep-extend:20180409"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "Framework.prototype.responseStatic"
+    },
+    "packageName": "total.js",
+    "version": [
+      ">=2.1.0 <2.1.1",
+      ">=2.2.0 <2.2.1",
+      ">=2.3.0 <2.3.1",
+      ">=2.4.0 <2.4.1"
+    ],
+    "vulnId": "SNYK-JS-TOTALJS-173710"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "safeGet"
+    },
+    "packageName": "lodash.merge",
+    "version": [
+      ">4.6.0 <=4.6.1"
+    ],
+    "vulnId": "SNYK-JS-LODASHMERGE-173732"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "baseMergeDeep"
+    },
+    "packageName": "lodash.merge",
+    "version": [
+      ">=3.0.0 <4.6.1"
+    ],
+    "vulnId": "SNYK-JS-LODASHMERGE-173732"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "baseMerge"
+    },
+    "packageName": "lodash.merge",
+    "version": [
+      ">=3.0.0 <4.6.1"
+    ],
+    "vulnId": "SNYK-JS-LODASHMERGE-173732"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "merge"
+    },
+    "packageName": "lodash.merge",
+    "version": [
+      ">=2.0.0 <3.0.0"
+    ],
+    "vulnId": "SNYK-JS-LODASHMERGE-173732"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lodash.js",
+      "functionName": "merge"
+    },
+    "packageName": "lodash",
+    "version": [
+      ">=0.9.0 <1.0.0"
+    ],
+    "vulnId": "npm:lodash:20180130"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "dist/lodash.js",
+      "functionName": "runInContext.merge"
+    },
+    "packageName": "lodash",
+    "version": [
+      ">=1.1.0 <2.0.0"
+    ],
+    "vulnId": "npm:lodash:20180130"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lodash.js",
+      "functionName": "runInContext.merge"
+    },
+    "packageName": "lodash",
+    "version": [
+      ">=2.0.0 <3.0.0"
+    ],
+    "vulnId": "npm:lodash:20180130"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lodash.js",
+      "functionName": "runInContext.baseMerge"
+    },
+    "packageName": "lodash",
+    "version": [
+      ">=2.0.0 <3.0.0"
+    ],
+    "vulnId": "npm:lodash:20180130"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lodash.js",
+      "functionName": "merge"
+    },
+    "packageName": "lodash",
+    "version": [
+      ">=0.9.0 <1.0.0"
+    ],
+    "vulnId": "SNYK-JS-LODASH-73638"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "dist/lodash.js",
+      "functionName": "runInContext.merge"
+    },
+    "packageName": "lodash",
+    "version": [
+      ">=1.1.0 <2.0.0"
+    ],
+    "vulnId": "SNYK-JS-LODASH-73638"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lodash.js",
+      "functionName": "runInContext.merge"
+    },
+    "packageName": "lodash",
+    "version": [
+      ">=2.0.0 <3.0.0"
+    ],
+    "vulnId": "SNYK-JS-LODASH-73638"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lodash.js",
+      "functionName": "runInContext.baseMerge"
+    },
+    "packageName": "lodash",
+    "version": [
+      ">=2.0.0 <3.0.0"
+    ],
+    "vulnId": "SNYK-JS-LODASH-73638"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "runInContext.baseMergeDeep"
+    },
+    "packageName": "lodash",
+    "version": [
+      ">=3.0.0 <4.0.0"
+    ],
+    "vulnId": "SNYK-JS-LODASH-73638"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "runInContext.baseMerge"
+    },
+    "packageName": "lodash",
+    "version": [
+      ">=3.0.0 <4.0.0"
+    ],
+    "vulnId": "SNYK-JS-LODASH-73638"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "node.js",
+      "functionName": "exports.formatters.o"
+    },
+    "packageName": "debug",
+    "version": [
+      ">=1.0.0 <2.5.0"
+    ],
+    "vulnId": "npm:debug:20170905"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lodash.js",
+      "functionName": "runInContext.assignMergeValue"
+    },
+    "packageName": "lodash",
+    "version": [
+      ">=4.0.0 <4.17.5"
+    ],
+    "vulnId": "SNYK-JS-LODASH-73638"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lodash.js",
+      "functionName": "runInContext.mergeDefaults"
+    },
+    "packageName": "lodash",
+    "version": [
+      ">=4.0.0 <4.17.3"
+    ],
+    "vulnId": "SNYK-JS-LODASH-73638"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "runInContext.baseMergeDeep"
+    },
+    "packageName": "lodash",
+    "version": [
+      ">=3.0.0 <4.0.0"
+    ],
+    "vulnId": "npm:lodash:20180130"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "runInContext.baseMergeDeep"
+    },
+    "packageName": "lodash",
+    "version": [
+      ">=3.0.0 <4.0.0"
+    ],
+    "vulnId": "npm:lodash:20180130"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lodash.js",
+      "functionName": "runInContext.baseMergeDeep"
+    },
+    "packageName": "lodash",
+    "version": [
+      ">=4.0.0 <4.17.5"
+    ],
+    "vulnId": "SNYK-JS-LODASH-73638"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lodash.js",
+      "functionName": "runInContext.baseMerge"
+    },
+    "packageName": "lodash",
+    "version": [
+      ">=4.0.0 <4.17.5"
+    ],
+    "vulnId": "SNYK-JS-LODASH-73638"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "F.$requestcontinue"
+    },
+    "packageName": "total.js",
+    "version": [
+      ">=2.5.0 <2.5.1",
+      ">=2.6.0 <2.6.3",
+      ">=2.7.0 <2.7.1",
+      ">=2.8.0 <2.8.1",
+      ">=2.9.0 <2.9.5",
+      ">=3.0.0 <3.0.1",
+      ">=3.1.0 <3.1.1",
+      ">=3.2.0 <3.2.4"
+    ],
+    "vulnId": "SNYK-JS-TOTALJS-173710"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/WebSocketServer.js",
+      "functionName": "WebSocketServer"
+    },
+    "packageName": "ws",
+    "version": [
+      "<1.1.1"
+    ],
+    "vulnId": "npm:ws:20160624"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/windows.js",
+      "functionName": "module.exports"
+    },
+    "packageName": "macaddress",
+    "version": [
+      "<0.2.9"
+    ],
+    "vulnId": "npm:macaddress:20180511"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/unix.js",
+      "functionName": "module.exports"
+    },
+    "packageName": "macaddress",
+    "version": [
+      "<0.2.9"
+    ],
+    "vulnId": "npm:macaddress:20180511"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/macosx.js",
+      "functionName": "module.exports"
+    },
+    "packageName": "macaddress",
+    "version": [
+      "<0.2.9"
+    ],
+    "vulnId": "npm:macaddress:20180511"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/linux.js",
+      "functionName": "module.exports"
+    },
+    "packageName": "macaddress",
+    "version": [
+      "<0.2.9"
+    ],
+    "vulnId": "npm:macaddress:20180511"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "marked.js",
+      "functionName": "Renderer.prototype.link"
+    },
+    "packageName": "marked",
+    "version": [
+      "<0.3.7"
+    ],
+    "vulnId": "npm:marked:20170112"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "rnj.js",
+      "functionName": "mathRNG"
+    },
+    "packageName": "crypto-browserify",
+    "version": [
+      "<2.1.11"
+    ],
+    "vulnId": "npm:crypto-browserify:20140722"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "isURL"
+    },
+    "packageName": "is-url",
+    "version": [
+      "<1.2.4"
+    ],
+    "vulnId": "npm:is-url:20180319"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/Server.js",
+      "functionName": "Server.prototype.checkHost"
+    },
+    "packageName": "webpack-dev-server",
+    "version": [
+      ">2.4.2 <3.1.11"
+    ],
+    "vulnId": "SNYK-JS-WEBPACKDEVSERVER-72405"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "dist/amd/handlebars/compiler/javascript-compiler.js",
+      "functionName": "JavaScriptCompiler.prototype.nameLookup"
+    },
+    "packageName": "handlebars",
+    "version": [
+      ">1.0.12 <4.0.13"
+    ],
+    "vulnId": "SNYK-JS-HANDLEBARS-173692"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/growl.js",
+      "functionName": "growl"
+    },
+    "packageName": "growl",
+    "version": [
+      ">=1.4.0 <1.10.0"
+    ],
+    "vulnId": "npm:growl:20160721"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/cookie.js",
+      "functionName": "parse"
+    },
+    "packageName": "tough-cookie",
+    "version": [
+      ">=0.9.7 <2.3.0"
+    ],
+    "vulnId": "npm:tough-cookie:20160722"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "dist/pad-string.js",
+      "functionName": "padString"
+    },
+    "packageName": "base64url",
+    "version": [
+      ">=2.0.0 <3.0.0"
+    ],
+    "vulnId": "npm:base64url:20180511"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/ejs.js",
+      "functionName": "cpOptsInData"
+    },
+    "packageName": "ejs",
+    "version": [
+      ">=2.2.1 <2.5.3"
+    ],
+    "vulnId": "npm:ejs:20161128"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "URL"
+    },
+    "packageName": "url-parse",
+    "version": [
+      ">=0.1.0 <1.4.3"
+    ],
+    "vulnId": "npm:url-parse:20180731"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "compact"
+    },
+    "packageName": "qs",
+    "version": [
+      "<1.0.0"
+    ],
+    "vulnId": "npm:qs:20140806"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/language.js",
+      "functionName": "parseLanguage"
+    },
+    "packageName": "negotiator",
+    "version": [
+      "<0.6.1"
+    ],
+    "vulnId": "npm:negotiator:20160616"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "parse.js",
+      "functionName": "parsePatch"
+    },
+    "packageName": "diff",
+    "version": [
+      ">=3.0.0 <3.5.0"
+    ],
+    "vulnId": "npm:diff:20180305"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/index.js",
+      "functionName": "exports.type"
+    },
+    "packageName": "content",
+    "version": [
+      ">=4.0.0 <4.0.4"
+    ],
+    "vulnId": "npm:content:20180305"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "querystring"
+    },
+    "packageName": "querystringify",
+    "version": [
+      "<2.0.0"
+    ],
+    "vulnId": "npm:querystringify:20180419"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "module.exports"
+    },
+    "packageName": "static-eval",
+    "version": [
+      "<2.0.1"
+    ],
+    "vulnId": "SNYK-JS-STATICEVAL-173693"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "module.exports.memoized"
+    },
+    "packageName": "mem",
+    "version": [
+      "<=1.1.0"
+    ],
+    "vulnId": "npm:mem:20180117"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/marked.js",
+      "functionName": "unescape"
+    },
+    "packageName": "marked",
+    "version": [
+      "0.3.0<0.3.6"
+    ],
+    "vulnId": "npm:marked:20150520"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lodash.js",
+      "functionName": "safeGet"
+    },
+    "packageName": "lodash",
+    "version": [
+      ">=4.17.5 <4.17.11"
+    ],
+    "vulnId": "SNYK-JS-LODASH-73638"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/util/extract.js",
+      "functionName": "isSymlink"
+    },
+    "packageName": "bower",
+    "version": [
+      "<1.8.8"
+    ],
+    "vulnId": "SNYK-JS-BOWER-73627"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/decompress-zip.js",
+      "functionName": "DecompressZip.prototype.extract"
+    },
+    "packageName": "decompress-zip",
+    "version": [
+      "<0.3.2"
+    ],
+    "vulnId": "SNYK-JS-DECOMPRESSZIP-73598"
+  },
+  {
+    "functionId": {
+      "className": null,
       "filePath": "lib/controllers/proxy.js",
       "functionName": "module.exports.buildReqHandler.handler"
     },
     "packageName": "terriajs-server",
     "version": [
       "<2.7.4"
-    ]
+    ],
+    "vulnId": "SNYK-JS-TERRIAJSSERVER-73556"
   },
   {
     "functionId": {
@@ -19,7 +914,8 @@
     "packageName": "loopback-connector-mongodb",
     "version": [
       "<3.6.0"
-    ]
+    ],
+    "vulnId": "SNYK-JS-LOOPBACKCONNECTORMONGODB-73555"
   },
   {
     "functionId": {
@@ -30,7 +926,8 @@
     "packageName": "superagent",
     "version": [
       "<3.4.0"
-    ]
+    ],
+    "vulnId": "npm:superagent:20170807"
   },
   {
     "functionId": {
@@ -40,8 +937,9 @@
     },
     "packageName": "qs",
     "version": [
-      ">=6.3.0 <6.3.2"
-    ]
+      ">=6.3.1 <6.3.2"
+    ],
+    "vulnId": "npm:qs:20170213"
   },
   {
     "functionId": {
@@ -51,8 +949,10 @@
     },
     "packageName": "qs",
     "version": [
-      ">=6.2.0 <6.2.3"
-    ]
+      ">=6.2.0 <6.2.3",
+      "6.3.0"
+    ],
+    "vulnId": "npm:qs:20170213"
   },
   {
     "functionId": {
@@ -63,7 +963,8 @@
     "packageName": "qs",
     "version": [
       ">=6.1.0 <6.1.2"
-    ]
+    ],
+    "vulnId": "npm:qs:20170213"
   },
   {
     "functionId": {
@@ -74,7 +975,8 @@
     "packageName": "rrule",
     "version": [
       "<2.6.0"
-    ]
+    ],
+    "vulnId": "SNYK-JS-RRULE-72455"
   },
   {
     "functionId": {
@@ -85,7 +987,8 @@
     "packageName": "sshpk",
     "version": [
       "<1.14.1"
-    ]
+    ],
+    "vulnId": "npm:sshpk:20180409"
   },
   {
     "functionId": {
@@ -100,7 +1003,8 @@
       ">=3.0.0 <3.1.2",
       ">=4.0.0 <4.2.2",
       ">=5.0.0 <5.0.2"
-    ]
+    ],
+    "vulnId": "SNYK-JS-REACTDEVUTILS-72875"
   },
   {
     "functionId": {
@@ -110,8 +1014,9 @@
     },
     "packageName": "merge",
     "version": [
-      "<1.2.1"
-    ]
+      ">1.0.0 <1.2.1"
+    ],
+    "vulnId": "SNYK-JS-MERGE-72553"
   },
   {
     "functionId": {
@@ -122,7 +1027,8 @@
     "packageName": "ua-parser-js",
     "version": [
       "<0.7.16"
-    ]
+    ],
+    "vulnId": "npm:ua-parser-js:20171012"
   },
   {
     "functionId": {
@@ -134,7 +1040,8 @@
     "version": [
       "<2.0.2",
       ">=3.0.0 <3.0.2"
-    ]
+    ],
+    "vulnId": "npm:extend:20180424"
   },
   {
     "functionId": {
@@ -145,7 +1052,8 @@
     "packageName": "braces",
     "version": [
       ">= 2.0.0 <2.3.1"
-    ]
+    ],
+    "vulnId": "npm:braces:20180219"
   },
   {
     "functionId": {
@@ -155,8 +1063,9 @@
     },
     "packageName": "ua-parser-js",
     "version": [
-      "<0.7.18"
-    ]
+      "> 0.5.20 <0.7.18"
+    ],
+    "vulnId": "npm:ua-parser-js:20180227"
   },
   {
     "functionId": {
@@ -166,8 +1075,9 @@
     },
     "packageName": "shelljs",
     "version": [
-      "*"
-    ]
+      ">0.1.4 <=0.8.3"
+    ],
+    "vulnId": "npm:shelljs:20140723"
   },
   {
     "functionId": {
@@ -177,8 +1087,9 @@
     },
     "packageName": "request",
     "version": [
-      ">2.2.5 <2.68.0"
-    ]
+      ">=2.54.0 <2.68.0"
+    ],
+    "vulnId": "npm:request:20160119"
   },
   {
     "functionId": {
@@ -188,9 +1099,10 @@
     },
     "packageName": "ws",
     "version": [
-      "<1.1.5",
+      ">=0.6.0 <1.1.5",
       ">=2.0.0 <3.3.1"
-    ]
+    ],
+    "vulnId": "npm:ws:20171108"
   },
   {
     "functionId": {
@@ -201,7 +1113,8 @@
     "packageName": "clean-css",
     "version": [
       "<4.1.11"
-    ]
+    ],
+    "vulnId": "npm:clean-css:20180306"
   },
   {
     "functionId": {
@@ -212,7 +1125,8 @@
     "packageName": "chownr",
     "version": [
       "*"
-    ]
+    ],
+    "vulnId": "npm:chownr:20180731"
   },
   {
     "functionId": {
@@ -222,8 +1136,9 @@
     },
     "packageName": "mem",
     "version": [
-      "<4.0.0"
-    ]
+      ">1.1.0<4.0.0"
+    ],
+    "vulnId": "npm:mem:20180117"
   },
   {
     "functionId": {
@@ -233,8 +1148,9 @@
     },
     "packageName": "mime",
     "version": [
-      "<1.4.1"
-    ]
+      ">=1.2.6 <1.4.1"
+    ],
+    "vulnId": "npm:mime:20170907"
   },
   {
     "functionId": {
@@ -245,7 +1161,8 @@
     "packageName": "inline-source",
     "version": [
       "<6.1.7"
-    ]
+    ],
+    "vulnId": "SNYK-JS-INLINESOURCE-72623"
   },
   {
     "functionId": {
@@ -255,8 +1172,9 @@
     },
     "packageName": "lodash",
     "version": [
-      "<4.17.5"
-    ]
+      ">=4.0.0 <4.17.5"
+    ],
+    "vulnId": "npm:lodash:20180130"
   },
   {
     "functionId": {
@@ -266,8 +1184,9 @@
     },
     "packageName": "lodash",
     "version": [
-      "<4.17.5"
-    ]
+      ">=4.0.0 <4.17.5"
+    ],
+    "vulnId": "npm:lodash:20180130"
   },
   {
     "functionId": {
@@ -278,7 +1197,8 @@
     "packageName": "cached-path-relative",
     "version": [
       "<1.0.2"
-    ]
+    ],
+    "vulnId": "SNYK-JS-CACHEDPATHRELATIVE-72573"
   },
   {
     "functionId": {
@@ -289,7 +1209,8 @@
     "packageName": "apex-publish-static-files",
     "version": [
       "<2.0.1"
-    ]
+    ],
+    "vulnId": "SNYK-JS-APEXPUBLISHSTATICFILES-72552"
   },
   {
     "functionId": {
@@ -300,7 +1221,8 @@
     "packageName": "libnmap",
     "version": [
       "<0.4.16"
-    ]
+    ],
+    "vulnId": "SNYK-JS-LIBNMAP-72551"
   },
   {
     "functionId": {
@@ -310,8 +1232,9 @@
     },
     "packageName": "moment",
     "version": [
-      "<2.19.3"
-    ]
+      ">=2.13.0 <2.19.3"
+    ],
+    "vulnId": "npm:moment:20170905"
   },
   {
     "functionId": {
@@ -321,8 +1244,9 @@
     },
     "packageName": "moment",
     "version": [
-      "<2.19.3"
-    ]
+      ">=2.13.0 <2.19.3"
+    ],
+    "vulnId": "npm:moment:20170905"
   },
   {
     "functionId": {
@@ -332,8 +1256,9 @@
     },
     "packageName": "moment",
     "version": [
-      "<2.19.3"
-    ]
+      ">=2.13.0 <2.19.3"
+    ],
+    "vulnId": "npm:moment:20170905"
   },
   {
     "functionId": {
@@ -344,7 +1269,8 @@
     "packageName": "moment",
     "version": [
       "<2.19.3"
-    ]
+    ],
+    "vulnId": "npm:moment:20170905"
   },
   {
     "functionId": {
@@ -355,7 +1281,8 @@
     "packageName": "moment",
     "version": [
       "<2.19.3"
-    ]
+    ],
+    "vulnId": "npm:moment:20170905"
   },
   {
     "functionId": {
@@ -365,8 +1292,9 @@
     },
     "packageName": "superagent",
     "version": [
-      "<3.7.0"
-    ]
+      ">=3.4.0 <3.7.0"
+    ],
+    "vulnId": "npm:superagent:20170807"
   },
   {
     "functionId": {
@@ -376,9 +1304,10 @@
     },
     "packageName": "debug",
     "version": [
-      "<2.6.9",
+      ">= 2.5.0 <2.6.9",
       ">=3.0.0 <3.1.0"
-    ]
+    ],
+    "vulnId": "npm:debug:20170905"
   },
   {
     "functionId": {
@@ -389,7 +1318,8 @@
     "packageName": "tough-cookie",
     "version": [
       "<2.3.3"
-    ]
+    ],
+    "vulnId": "npm:tough-cookie:20170905"
   },
   {
     "functionId": {
@@ -400,7 +1330,8 @@
     "packageName": "ms",
     "version": [
       "<2.0.0"
-    ]
+    ],
+    "vulnId": "npm:ms:20170412"
   },
   {
     "functionId": {
@@ -411,7 +1342,8 @@
     "packageName": "qs",
     "version": [
       "<6.0.4"
-    ]
+    ],
+    "vulnId": "npm:qs:20170213"
   },
   {
     "functionId": {
@@ -422,7 +1354,8 @@
     "packageName": "handlebars",
     "version": [
       "<4.0.0"
-    ]
+    ],
+    "vulnId": "npm:handlebars:20151207"
   },
   {
     "functionId": {
@@ -432,8 +1365,9 @@
     },
     "packageName": "uglify-js",
     "version": [
-      "<2.6.0"
-    ]
+      ">1.3.5 <2.6.0"
+    ],
+    "vulnId": "npm:uglify-js:20151024"
   },
   {
     "functionId": {
@@ -443,23 +1377,9 @@
     },
     "packageName": "st",
     "version": [
-      "<0.2.5"
-    ]
-  },
-  {
-    "functionId": {
-      "className": null,
-      "filePath": "packages/react-dom/src/server/DOMMarkupOperations.js",
-      "functionName": "createMarkupForProperty"
-    },
-    "packageName": "react-dom",
-    "version": [
-      ">=16.0.0 <16.0.1",
-      ">=16.1.0 <16.1.2",
-      ">=16.2.0 <16.2.1",
-      ">=16.3.0 <16.3.3",
-      ">=16.4.0 <16.4.2"
-    ]
+      ">0.0.1 <0.2.5"
+    ],
+    "vulnId": "npm:st:20140206"
   },
   {
     "functionId": {
@@ -469,8 +1389,9 @@
     },
     "packageName": "stringstream",
     "version": [
-      "<0.0.6"
-    ]
+      ">0.0.0 <0.0.6"
+    ],
+    "vulnId": "npm:stringstream:20180511"
   },
   {
     "functionId": {
@@ -480,8 +1401,10 @@
     },
     "packageName": "cryptiles",
     "version": [
-      "<4.1.2"
-    ]
+      ">=3.1.0 <3.1.3",
+      ">=4.0.0 <4.1.2"
+    ],
+    "vulnId": "npm:cryptiles:20180710"
   },
   {
     "functionId": {
@@ -492,7 +1415,8 @@
     "packageName": "fresh",
     "version": [
       "<0.5.2"
-    ]
+    ],
+    "vulnId": "npm:fresh:20170908"
   },
   {
     "functionId": {
@@ -503,7 +1427,8 @@
     "packageName": "passport-saml",
     "version": [
       "*"
-    ]
+    ],
+    "vulnId": "SNYK-JS-PASSPORTSAML-72411"
   },
   {
     "functionId": {
@@ -514,7 +1439,8 @@
     "packageName": "mime",
     "version": [
       ">=2.0.0 <2.0.3"
-    ]
+    ],
+    "vulnId": "npm:mime:20170907"
   },
   {
     "functionId": {
@@ -525,7 +1451,8 @@
     "packageName": "tunnel-agent",
     "version": [
       "<0.6.0"
-    ]
+    ],
+    "vulnId": "npm:tunnel-agent:20170305"
   },
   {
     "functionId": {
@@ -535,8 +1462,9 @@
     },
     "packageName": "deep-extend",
     "version": [
-      "<0.5.1"
-    ]
+      ">=0.4.0 <0.5.1"
+    ],
+    "vulnId": "npm:deep-extend:20180409"
   },
   {
     "functionId": {
@@ -546,7 +1474,8 @@
     },
     "packageName": "minimatch",
     "version": [
-      "<3.0.2"
-    ]
+      ">0.0.5 <3.0.2"
+    ],
+    "vulnId": "npm:minimatch:20160620"
   }
 ]
