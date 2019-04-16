@@ -1,7 +1,9 @@
 const fs = require('fs');
 const test = require('tap').test;
+const nock = require('nock');
 const sinon = require('sinon');
 const path = require('path');
+const needle = require('needle');
 
 const config = require('../lib/config');
 const snapshotReader = require('../lib/snapshot/reader');
@@ -91,4 +93,33 @@ test('snapshot reader favours bundled snapshot when possible', async (t) => {
   stub.restore();
   existsStub.restore();
   t.end();
+});
+
+test('reader loading snapshot from upstream', async (t) => {
+  nock('https://homebase.snyk.io')
+    .get('/api/v2/snapshot/whatever/node')
+    .reply(200, []);
+  nock('https://homebase.snyk.io')
+    .get('/api/v2/snapshot/whatever/node')
+    .reply(200, []);
+
+  const needleSpy = sinon.spy(needle, 'request');
+
+  snapshotReader.loadFromUpstream();
+  t.equal(needleSpy.args[0][0], 'get', 'snapshots retrieved with get');
+  t.equal(needleSpy.args[0][1], 'https://homebase.snyk.io/api/v2/snapshot/whatever/node', 'url is correct');
+  const expectedRequestOptions = {
+    json: true,
+    rejectUnauthorized: true,
+    headers: {"If-Modified-Since": "Thu, 06 Dec 2018 14:02:33 GMT"},
+  };
+  t.deepEqual(needleSpy.args[0][3], expectedRequestOptions, 'request options are correct');
+
+  config['allowUnknownCA'] = true;
+  snapshotReader.loadFromUpstream();
+  expectedRequestOptions.rejectUnauthorized = false;
+  t.deepEqual(needleSpy.args[1][3], expectedRequestOptions, 'request options are correct');
+
+  t.ok(nock.isDone(), 'snapshot requests made');
+  nock.cleanAll();
 });

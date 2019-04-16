@@ -1,22 +1,42 @@
 const test = require('tap').test;
 const proxyquire =  require('proxyquire');
 const nock = require('nock');
+const needle = require('needle');
 
 const sinon = require('sinon');
 const spy = sinon.spy();
 const debugMock = (loggerType) => (msg) => {spy(msg);};
 const state = require('../lib/state');
+const config = require('../lib/config');
+config.initConfig({projectId: 'some-project-id'});
 const transmitter = proxyquire('../lib/transmitter', {'debug': debugMock});
 
 test('Transmitter transmits 0 events for no events', async function (t) {
   nock('http://host')
-  .post('/method')
-  .reply(200, {});
+    .post('/method')
+    .reply(200, {});
+  nock('http://host')
+    .post('/method')
+    .reply(200, {});
 
   spy.resetHistory();
+  const needleSpy = sinon.spy(needle, 'request');
 
   await transmitter.transmitEvents('http://host/method', 'some-project-id', 'some-agent-id');
-  t.ok(nock.isDone(), 'empty transmission sent');
+  t.equal(needleSpy.args[0][0], 'post', 'beacons are being posted');
+  t.equal(needleSpy.args[0][1], 'http://host/method', 'url is correct');
+  t.ok('agentId' in needleSpy.args[0][2], 'agent ID is transmitted');
+  t.equal(needleSpy.args[0][2]['agentId'], 'some-agent-id', 'agent ID is correct');
+  t.ok('projectId' in needleSpy.args[0][2], 'project ID is transmitted');
+  t.equal(needleSpy.args[0][2]['projectId'], 'some-project-id', 'project ID is correct');
+  t.deepEqual(needleSpy.args[0][3], {json: true, rejectUnauthorized: true}, 'request options are correct');
+
+  config['allowUnknownCA'] = true;
+  await transmitter.transmitEvents('http://host/method', 'some-project-id', 'some-agent-id');
+  t.deepEqual(needleSpy.args[1][3], {json: true, rejectUnauthorized: false}, 'request options are correct');
+
+  t.ok(nock.isDone(), 'two transmissions sent');
+
   nock.cleanAll();
 });
 
