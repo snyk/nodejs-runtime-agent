@@ -143,8 +143,7 @@ test('demo app reports a vuln method when called', async (t) => {
   const SNAPSHOT_INTERVAL_MS = 2500; // retrieve newer snapshot every 2.5 seconds
 
   // configure agent in demo server via env vars
-  process.env.SNYK_HOMEBASE_URL = 'http://localhost:8000/api/v1/beacon';
-  process.env.SNYK_SNAPSHOT_URL = 'http://localhost:8000/api/v2/snapshot/A3B8ADA9-B726-41E9-BC6B-5169F7F89A0C/node';
+  process.env.SNYK_HOMEBASE_ORIGIN = 'http://localhost:8000';
   process.env.SNYK_BEACON_INTERVAL_MS = BEACON_INTERVAL_MS;
   process.env.SNYK_SNAPSHOT_INTERVAL_MS = SNAPSHOT_INTERVAL_MS;
   process.env.SNYK_TRIGGER_EXTRA_VULN = true;
@@ -176,8 +175,7 @@ test('demo app reports a vuln method when called', async (t) => {
   // make sure all beacon calls were made
   t.ok(nock.isDone(), 'all beacon call were made');
 
-  delete process.env.SNYK_HOMEBASE_URL;
-  delete process.env.SNYK_SNAPSHOT_URL;
+  delete process.env.SNYK_HOMEBASE_ORIGIN;
   delete process.env.SNYK_BEACON_INTERVAL_MS;
   delete process.env.SNYK_SNAPSHOT_INTERVAL_MS;
   delete process.env.SNYK_TRIGGER_EXTRA_VULN;
