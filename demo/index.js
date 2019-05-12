@@ -1,8 +1,7 @@
 // load the agent from the local project and start it
 // env vars provide the configuration with default values as a fallback
 require('../lib')({
-  url: process.env.SNYK_HOMEBASE_URL || 'http://localhost:8000/api/v1/beacon',
-  snapshotUrl: process.env.SNYK_SNAPSHOT_URL || 'http://localhost:8000/api/v2/snapshot/A3B8ADA9-B726-41E9-BC6B-5169F7F89A0C/node',
+  baseUrl: process.env.SNYK_HOMEBASE_ORIGIN || 'http://localhost:8000',
   projectId: process.env.SNYK_PROJECT_ID || 'A3B8ADA9-B726-41E9-BC6B-5169F7F89A0C',
   beaconIntervalMs: process.env.SNYK_BEACON_INTERVAL_MS || 10000,
   snapshotIntervalMs: process.env.SNYK_SNAPSHOT_INTERVAL_MS || 60 * 60 * 1000,
