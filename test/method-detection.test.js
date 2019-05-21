@@ -177,6 +177,20 @@ module.exports = {
   t.end();
 });
 
+test('test export default method detection', function (t) {
+  const contents = `
+export default function() {}
+`;
+  const methods = ['module.exports'];
+  const found = ast.findAllVulnerableFunctionsInScript(
+    contents, methods,
+  );
+  t.same(sorted(Object.keys(found)), sorted(methods));
+  t.equal(found[methods[0]].start.line, 2,
+    'export default aliased to module.exports');
+  t.end();
+});
+
 test('test class member detection', function (t) {
   const contents = `
 class Moog {
