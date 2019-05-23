@@ -24,6 +24,7 @@ test('demo app reports a vuln method when called', async (t) => {
         'st': {'st.js': {'Mount.prototype.getPath': null}},
         'mime': {'mime.js': {'Mime.prototype.lookup': null}},
         'negotiator': {'lib/language.js': {'parseLanguage': null}},
+        'js-yaml': {'lib/js-yaml/loader.js': {'storeMappingPair': null}},
       };
       t.deepEqual(beaconData.filters, expectedFilters, 'instrumentation appears in beacon');
       t.ok(beaconData.loadedSources, 'loadedSources present in beacon data');
@@ -63,6 +64,7 @@ test('demo app reports a vuln method when called', async (t) => {
         'st': {'st.js': {'Mount.prototype.getPath': null}},
         'mime': {'mime.js': {'Mime.prototype.lookup': null}},
         'negotiator': {'lib/language.js': {'parseLanguage': null}},
+        'js-yaml': {'lib/js-yaml/loader.js': {'storeMappingPair': null}},
       };
       t.deepEqual(beaconData.filters, expectedFilters, 'instrumentation appears in beacon');
       t.ok(beaconData.loadedSources, 'loadedSources present in beacon data');
@@ -124,6 +126,7 @@ test('demo app reports a vuln method when called', async (t) => {
       'st': {'st.js': {'Mount.prototype.getPath': null, 'Mount.prototype.getUrl': null}},
       'mime': {'mime.js': {'Mime.prototype.lookup': null}},
       'negotiator': {'lib/language.js': {'parseLanguage': null}},
+      'js-yaml': {'lib/js-yaml/loader.js': {'storeMappingPair': null}},
     };
     t.deepEqual(beaconData.filters, expectedFilters, 'instrumentation appears in beacon');
     t.ok(beaconData.loadedSources, 'loadedSources present in beacon data');
