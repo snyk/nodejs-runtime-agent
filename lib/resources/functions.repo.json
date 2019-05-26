@@ -2,6 +2,762 @@
   {
     "functionId": {
       "className": null,
+      "filePath": "lib/handlebars/helpers/lookup.js",
+      "functionName": "module.exports"
+    },
+    "packageName": "handlebars",
+    "version": [
+      ">3.0.6 <4.1.2"
+    ],
+    "vulnId": "SNYK-JS-HANDLEBARS-174183"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/base64.js",
+      "functionName": "base64.decode"
+    },
+    "packageName": "utile",
+    "version": [
+      ">0.0.6 <=0.3.0"
+    ],
+    "vulnId": "npm:utile:20180614"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/base64.js",
+      "functionName": "base64.encode"
+    },
+    "packageName": "utile",
+    "version": [
+      ">0.0.6 <=0.3.0"
+    ],
+    "vulnId": "npm:utile:20180614"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/js-yaml/loader.js",
+      "functionName": "loadAll.storeMappingPair"
+    },
+    "packageName": "js-yaml",
+    "version": [
+      ">1.0.3 <=2.1.3"
+    ],
+    "vulnId": "SNYK-JS-JSYAML-174129"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/js-yaml/loader.js",
+      "functionName": "storeMappingPair"
+    },
+    "packageName": "js-yaml",
+    "version": [
+      ">2.1.3 <3.13.1"
+    ],
+    "vulnId": "SNYK-JS-JSYAML-174129"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/hoek.js",
+      "functionName": "exports.merge"
+    },
+    "packageName": "hoek",
+    "version": [
+      "<0.0.19"
+    ],
+    "vulnId": "npm:hoek:20180212"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/index.js",
+      "functionName": "exports.merge"
+    },
+    "packageName": "hoek",
+    "version": [
+      ">=5.0.0 <5.0.3"
+    ],
+    "vulnId": "npm:hoek:20180212"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/index.js",
+      "functionName": "exports.merge"
+    },
+    "packageName": "hoek",
+    "version": [
+      ">0.0.18 <4.2.1"
+    ],
+    "vulnId": "npm:hoek:20180212"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "core.js",
+      "functionName": "isSafe"
+    },
+    "packageName": "useragent",
+    "version": [
+      ">=2.2.0 <2.2.1"
+    ],
+    "vulnId": "SNYK-JS-USERAGENT-174737"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "isSafe"
+    },
+    "packageName": "useragent",
+    "version": [
+      ">=2.1.13 <2.2.0",
+      ">=2.2.1"
+    ],
+    "vulnId": "SNYK-JS-USERAGENT-174737"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/writer.js",
+      "functionName": "Writer.prototype._stat.statCb"
+    },
+    "packageName": "fstream",
+    "version": [
+      ">0.0.0 <1.0.12"
+    ],
+    "vulnId": "SNYK-JS-FSTREAM-174725"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/parser_inline.js",
+      "functionName": "validateLink"
+    },
+    "packageName": "remarkable",
+    "version": [
+      ">0.1.0"
+    ],
+    "vulnId": "SNYK-JS-REMARKABLE-174641"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/eslint.js",
+      "functionName": "module.exports.api.report"
+    },
+    "packageName": "eslint",
+    "version": [
+      ">=1.4.0 <4.0.0-beta.0"
+    ],
+    "vulnId": "npm:eslint:20180222"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/linter.js",
+      "functionName": "Linter.prototype.report"
+    },
+    "packageName": "eslint",
+    "version": [
+      ">=4.0.0-beta.0 <4.5.0"
+    ],
+    "vulnId": "npm:eslint:20180222"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/report-translator.js",
+      "functionName": "normalizeMessagePlaceholders"
+    },
+    "packageName": "eslint",
+    "version": [
+      ">=4.6.0 <4.15.0"
+    ],
+    "vulnId": "npm:eslint:20180222"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/util/interpolate.js",
+      "functionName": "module.exports"
+    },
+    "packageName": "eslint",
+    "version": [
+      ">=4.15.0 <4.18.2"
+    ],
+    "vulnId": "npm:eslint:20180222"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/index.js",
+      "functionName": "exports.unset"
+    },
+    "packageName": "mpath",
+    "version": [
+      ">=0.3.0 <0.5.1"
+    ],
+    "vulnId": "SNYK-JS-MPATH-72672"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/unpack.js",
+      "functionName": "Unpack.prototype.CHECKFS"
+    },
+    "packageName": "tar",
+    "version": [
+      ">=3.0.0 <4.4.2"
+    ],
+    "vulnId": "SNYK-JS-TAR-174125"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/compress.js",
+      "functionName": "Compressor"
+    },
+    "packageName": "uglify-js",
+    "version": [
+      ">=2.2.0 <2.4.24"
+    ],
+    "vulnId": "npm:uglify-js:20150824"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "validator.js",
+      "functionName": "isDataURI"
+    },
+    "packageName": "validator",
+    "version": [
+      ">=5.2.0 <9.4.1"
+    ],
+    "vulnId": "npm:validator:20180218"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/isDataURI.js",
+      "functionName": "isDataURI"
+    },
+    "packageName": "validator",
+    "version": [
+      ">=5.2.0 <9.4.1"
+    ],
+    "vulnId": "npm:validator:20180218"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/bson/decimal128.js",
+      "functionName": "Decimal128.fromString"
+    },
+    "packageName": "bson",
+    "version": [
+      ">=0.5.0 <1.0.5"
+    ],
+    "vulnId": "npm:bson:20180225"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/utils.js",
+      "functionName": "exports.parseHost"
+    },
+    "packageName": "hawk",
+    "version": [
+      ">=0.3.0 <3.1.3",
+      ">=4.0.0 <4.1.1"
+    ],
+    "vulnId": "npm:hawk:20160119"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/hawk.js",
+      "functionName": "exports.authenticate"
+    },
+    "packageName": "hawk",
+    "version": [
+      "<=0.0.6"
+    ],
+    "vulnId": "npm:hawk:20160119"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/index.js",
+      "functionName": "exports.authenticate"
+    },
+    "packageName": "hawk",
+    "version": [
+      ">=0.0.7 <0.10.0"
+    ],
+    "vulnId": "npm:hawk:20160119"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/server.js",
+      "functionName": "exports.authenticate"
+    },
+    "packageName": "hawk",
+    "version": [
+      ">=0.10.0 <0.12.1"
+    ],
+    "vulnId": "npm:hawk:20160119"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/server.js",
+      "functionName": "exports.authenticateBewit"
+    },
+    "packageName": "hawk",
+    "version": [
+      ">=0.12.1  <3.1.3",
+      ">=4.0.0 <4.1.1"
+    ],
+    "vulnId": "npm:hawk:20160119"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/verify.js",
+      "functionName": "module.exports.verifySignature"
+    },
+    "packageName": "http-signature",
+    "version": [
+      "<0.10.1"
+    ],
+    "vulnId": "npm:http-signature:20150122"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/verify.js",
+      "functionName": "module.exports.verifyHMAC"
+    },
+    "packageName": "http-signature",
+    "version": [
+      ">=0.11.0 <1.0.0"
+    ],
+    "vulnId": "npm:http-signature:20150122"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lodash.js",
+      "functionName": "hasUnicodeWord"
+    },
+    "packageName": "lodash",
+    "version": [
+      ">=4.15.0 <4.17.11"
+    ],
+    "vulnId": "SNYK-JS-LODASH-73639"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/adapters/http.js",
+      "functionName": "module.exports"
+    },
+    "packageName": "axios",
+    "version": [
+      ">0.1.0"
+    ],
+    "vulnId": "SNYK-JS-AXIOS-174505"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/jwt.js",
+      "functionName": "jwt.decode"
+    },
+    "packageName": "jwt-simple",
+    "version": [
+      "<0.5.3"
+    ],
+    "vulnId": "SNYK-JS-JWTSIMPLE-174523"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "typed-function.js",
+      "functionName": "typed"
+    },
+    "packageName": "typed-function",
+    "version": [
+      "0.3.1"
+    ],
+    "vulnId": "SNYK-JS-TYPEDFUNCTION-174139"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "typed-function.js",
+      "functionName": "_typed"
+    },
+    "packageName": "typed-function",
+    "version": [
+      "<0.7.0"
+    ],
+    "vulnId": "SNYK-JS-TYPEDFUNCTION-174139"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "typed-function.js",
+      "functionName": "create._typed"
+    },
+    "packageName": "typed-function",
+    "version": [
+      "<0.10.6"
+    ],
+    "vulnId": "SNYK-JS-TYPEDFUNCTION-174139"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "compile"
+    },
+    "packageName": "morgan",
+    "version": [
+      "<1.9.1"
+    ],
+    "vulnId": "SNYK-JS-MORGAN-72579"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "test/core.js",
+      "functionName": "module.exports.jQuery.extend(Object, Object)"
+    },
+    "packageName": "jquery",
+    "version": [
+      "<=1.8.3"
+    ],
+    "vulnId": "SNYK-JS-JQUERY-174006"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "src/core.js",
+      "functionName": "jQuery.extend.jQuery.fn.extend"
+    },
+    "packageName": "jquery",
+    "version": [
+      ">1.8.3 <=2.2.4"
+    ],
+    "vulnId": "SNYK-JS-JQUERY-174006"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "dist/core.js",
+      "functionName": "jQuery.extend.jQuery.fn.extend"
+    },
+    "packageName": "jquery",
+    "version": [
+      ">2.2.4 <=3.3.1"
+    ],
+    "vulnId": "SNYK-JS-JQUERY-174006"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "adm-zip.js",
+      "functionName": "module.exports.getEntry"
+    },
+    "packageName": "adm-zip",
+    "version": [
+      ">0.1.1 <0.4.11"
+    ],
+    "vulnId": "npm:adm-zip:20180415"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "createHeaderGetter"
+    },
+    "packageName": "method-override",
+    "version": [
+      ">1.0.2 <2.3.10"
+    ],
+    "vulnId": "npm:method-override:20170927"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/extract.js",
+      "functionName": "Extract"
+    },
+    "packageName": "tar",
+    "version": [
+      ">0.0.1 <2.0.0"
+    ],
+    "vulnId": "npm:tar:20151103"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "simple-markdown.js",
+      "functionName": "sanitizeUrl"
+    },
+    "packageName": "simple-markdown",
+    "version": [
+      "<0.4.4"
+    ],
+    "vulnId": "SNYK-JS-SIMPLEMARKDOWN-173788"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/validators.js",
+      "functionName": "validators.isEmail"
+    },
+    "packageName": "validator",
+    "version": [
+      ">2.0.0 <=2.1.0"
+    ],
+    "vulnId": "npm:validator:20130705"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "validator.js",
+      "functionName": "validator.isEmail"
+    },
+    "packageName": "validator",
+    "version": [
+      ">2.1.0 <3.22.1"
+    ],
+    "vulnId": "npm:validator:20130705"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "module.exports.result.walk"
+    },
+    "packageName": "static-eval",
+    "version": [
+      "<2.0.0"
+    ],
+    "vulnId": "npm:static-eval:20171016"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "unescapeHTML.js",
+      "functionName": "module.exports"
+    },
+    "packageName": "underscore.string",
+    "version": [
+      ">2.4.1 <3.3.5"
+    ],
+    "vulnId": "npm:underscore.string:20170908"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "nativeTimingSafeEqual"
+    },
+    "packageName": "safe-compare",
+    "version": [
+      ">=1.0.4 <1.1.4"
+    ],
+    "vulnId": "SNYK-JS-SAFECOMPARE-173780"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "src/JSONPretty.js",
+      "functionName": "module.exports.render"
+    },
+    "packageName": "react-json-pretty",
+    "version": [
+      "<2.0.0"
+    ],
+    "vulnId": "SNYK-JS-REACTJSONPRETTY-173779"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "dist/JSONPretty.js",
+      "functionName": "JSONPretty.JSONPretty.prototype.render"
+    },
+    "packageName": "react-json-pretty",
+    "version": [
+      ">=2.0.0 <2.0.1"
+    ],
+    "vulnId": "SNYK-JS-REACTJSONPRETTY-173779"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "src/parse.js",
+      "functionName": "parse.parseExtension.parseExtension_block"
+    },
+    "packageName": "protobufjs",
+    "version": [
+      "<5.0.3",
+      ">=6.0.0 <6.8.6"
+    ],
+    "vulnId": "npm:protobufjs:20180305"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "src/parse.js",
+      "functionName": "parse.parseExtension"
+    },
+    "packageName": "protobufjs",
+    "version": [
+      "<5.0.3",
+      ">=6.0.0 <6.8.6"
+    ],
+    "vulnId": "npm:protobufjs:20180305"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "src/parse.js",
+      "functionName": "parse.parseMethod"
+    },
+    "packageName": "protobufjs",
+    "version": [
+      "<5.0.3",
+      ">=6.0.0 <6.8.6"
+    ],
+    "vulnId": "npm:protobufjs:20180305"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "src/parse.js",
+      "functionName": "parse.parseOption"
+    },
+    "packageName": "protobufjs",
+    "version": [
+      "<5.0.3",
+      ">=6.0.0 <6.8.6"
+    ],
+    "vulnId": "npm:protobufjs:20180305"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "src/parse.js",
+      "functionName": "parse.parseMapField"
+    },
+    "packageName": "protobufjs",
+    "version": [
+      "<5.0.3",
+      ">=6.0.0 <6.8.6"
+    ],
+    "vulnId": "npm:protobufjs:20180305"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "src/parse.js",
+      "functionName": "parse.parseField"
+    },
+    "packageName": "protobufjs",
+    "version": [
+      "<5.0.3",
+      ">=6.0.0 <6.8.6"
+    ],
+    "vulnId": "npm:protobufjs:20180305"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "src/parse.js",
+      "functionName": "parse.parseType.parseType_block"
+    },
+    "packageName": "protobufjs",
+    "version": [
+      "<5.0.3",
+      ">=6.0.0 <6.8.6"
+    ],
+    "vulnId": "npm:protobufjs:20180305"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "src/parse.js",
+      "functionName": "parse.parsePackage"
+    },
+    "packageName": "protobufjs",
+    "version": [
+      "<5.0.3",
+      ">=6.0.0 <6.8.6"
+    ],
+    "vulnId": "npm:protobufjs:20180305"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "src/parse.js",
+      "functionName": "parse.readValue"
+    },
+    "packageName": "protobufjs",
+    "version": [
+      "<5.0.3",
+      ">=6.0.0 <6.8.6"
+    ],
+    "vulnId": "npm:protobufjs:20180305"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/time-span.js",
+      "functionName": "exports.parseDate"
+    },
+    "packageName": "timespan",
+    "version": [
+      ">=2.1.0"
+    ],
+    "vulnId": "npm:timespan:20170907"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/time-span.js",
+      "functionName": "exports.test"
+    },
+    "packageName": "timespan",
+    "version": [
+      "*"
+    ],
+    "vulnId": "npm:timespan:20170907"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "lib/time-span.js",
+      "functionName": "exports.parse"
+    },
+    "packageName": "timespan",
+    "version": [
+      "*"
+    ],
+    "vulnId": "npm:timespan:20170907"
+  },
+  {
+    "functionId": {
+      "className": null,
       "filePath": "ejs.js",
       "functionName": "1.exports.render"
     },
@@ -361,6 +1117,54 @@
   {
     "functionId": {
       "className": null,
+      "filePath": "index.js",
+      "functionName": "safeGet"
+    },
+    "packageName": "lodash.merge",
+    "version": [
+      ">4.6.0 <=4.6.1"
+    ],
+    "vulnId": "SNYK-JS-LODASHMERGE-173733"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "baseMergeDeep"
+    },
+    "packageName": "lodash.merge",
+    "version": [
+      ">=3.0.0 <4.6.1"
+    ],
+    "vulnId": "SNYK-JS-LODASHMERGE-173733"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "baseMerge"
+    },
+    "packageName": "lodash.merge",
+    "version": [
+      ">=3.0.0 <4.6.1"
+    ],
+    "vulnId": "SNYK-JS-LODASHMERGE-173733"
+  },
+  {
+    "functionId": {
+      "className": null,
+      "filePath": "index.js",
+      "functionName": "merge"
+    },
+    "packageName": "lodash.merge",
+    "version": [
+      ">=2.0.0 <3.0.0"
+    ],
+    "vulnId": "SNYK-JS-LODASHMERGE-173733"
+  },
+  {
+    "functionId": {
+      "className": null,
       "filePath": "lodash.js",
       "functionName": "merge"
     },
@@ -398,18 +1202,6 @@
     "functionId": {
       "className": null,
       "filePath": "lodash.js",
-      "functionName": "runInContext.baseMerge"
-    },
-    "packageName": "lodash",
-    "version": [
-      ">=2.0.0 <3.0.0"
-    ],
-    "vulnId": "npm:lodash:20180130"
-  },
-  {
-    "functionId": {
-      "className": null,
-      "filePath": "lodash.js",
       "functionName": "merge"
     },
     "packageName": "lodash",
@@ -435,18 +1227,6 @@
       "className": null,
       "filePath": "lodash.js",
       "functionName": "runInContext.merge"
-    },
-    "packageName": "lodash",
-    "version": [
-      ">=2.0.0 <3.0.0"
-    ],
-    "vulnId": "SNYK-JS-LODASH-73638"
-  },
-  {
-    "functionId": {
-      "className": null,
-      "filePath": "lodash.js",
-      "functionName": "runInContext.baseMerge"
     },
     "packageName": "lodash",
     "version": [
@@ -513,18 +1293,6 @@
       ">=4.0.0 <4.17.3"
     ],
     "vulnId": "SNYK-JS-LODASH-73638"
-  },
-  {
-    "functionId": {
-      "className": null,
-      "filePath": "index.js",
-      "functionName": "runInContext.baseMergeDeep"
-    },
-    "packageName": "lodash",
-    "version": [
-      ">=3.0.0 <4.0.0"
-    ],
-    "vulnId": "npm:lodash:20180130"
   },
   {
     "functionId": {
@@ -951,18 +1719,6 @@
     "version": [
       ">=6.2.0 <6.2.3",
       "6.3.0"
-    ],
-    "vulnId": "npm:qs:20170213"
-  },
-  {
-    "functionId": {
-      "className": null,
-      "filePath": "lib/parse.js",
-      "functionName": "internals.parseObject"
-    },
-    "packageName": "qs",
-    "version": [
-      ">=6.1.0 <6.1.2"
     ],
     "vulnId": "npm:qs:20170213"
   },
