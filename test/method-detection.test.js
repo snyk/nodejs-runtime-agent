@@ -107,6 +107,21 @@ if (console.both) {
   t.end();
 });
 
+test('test lazy class declaration', function (t) {
+  const contents = `
+var Class = Class || (function (Object) {
+  function foo() {}
+});
+`;
+  const methods = ['Class.foo'];
+  const found = ast.findAllVulnerableFunctionsInScript(
+    contents, methods,
+  );
+  t.same(sorted(Object.keys(found)), sorted(methods));
+  t.equal(found[methods[0]].start.line, 3, 'foo');
+  t.end();
+});
+
 test('test st method detection', function (t) {
   const content = fs.readFileSync(__dirname + '/fixtures/st/node_modules/st.js');
   const methods = ['Mount.prototype.getPath'];
