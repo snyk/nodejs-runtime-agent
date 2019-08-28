@@ -183,5 +183,5 @@ test('demo app reports a vuln method when called', async (t) => {
   delete process.env.SNYK_SNAPSHOT_INTERVAL_MS;
   delete process.env.SNYK_TRIGGER_EXTRA_VULN;
 
-  demoApp.close();
+  await new Promise((resolve) => demoApp.close(resolve));
 });

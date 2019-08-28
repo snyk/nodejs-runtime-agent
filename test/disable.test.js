@@ -34,5 +34,5 @@ test('agent can be disabled', async (t) => {
   delete process.env.SNYK_BEACON_INTERVAL_MS;
   delete process.env.SNYK_RUNTIME_AGENT_DISABLE;
 
-  demoApp.close();
+  await new Promise((resolve) => demoApp.close(resolve));
 });

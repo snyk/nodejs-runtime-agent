@@ -25,8 +25,7 @@ test('node agent does not crash the demo app', async (t) => {
   delete process.env.SNYK_HOMEBASE_URL;
   delete process.env.SNYK_BEACON_INTERVAL_MS;
 
-  demoApp.close();
-
+  await new Promise((resolve) => demoApp.close(resolve));
 });
 
 test('node agent does not crash the demo app', async (t) => {
@@ -45,5 +44,5 @@ test('node agent does not crash the demo app', async (t) => {
   delete process.env.SNYK_SNAPSHOT_INTERVAL_MS;
   delete process.env.SNYK_BEACON_INTERVAL_MS;
 
-  demoApp.close();
+  await new Promise((resolve) => demoApp.close(resolve));
 });
