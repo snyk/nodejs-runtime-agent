@@ -21,7 +21,8 @@ if (process.env.SNYK_TRIGGER_EXTRA_VULN) {
 // create a server with a known vulnerability
 const http = require('http');
 const st = require('st');
-const PORT = process.env.PORT || 3000;
+const ENV_PORT = process.env.PORT;
+const PORT = ENV_PORT !== undefined ? ENV_PORT : 3000;
 
 const server = http.createServer(
   st({
@@ -31,6 +32,7 @@ const server = http.createServer(
   })
 );
 
-server.listen(PORT, () => console.log(`Demo server started, hit http://localhost:${PORT}/hello.txt to try it`));
+server.listen(PORT, () => console.log(
+  `Demo server started, hit http://localhost:${server.address().port}/hello.txt to try it`));
 
 module.exports = server;

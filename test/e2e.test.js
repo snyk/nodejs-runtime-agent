@@ -150,15 +150,18 @@ test('demo app reports a vuln method when called', async (t) => {
   process.env.SNYK_BEACON_INTERVAL_MS = BEACON_INTERVAL_MS;
   process.env.SNYK_SNAPSHOT_INTERVAL_MS = SNAPSHOT_INTERVAL_MS;
   process.env.SNYK_TRIGGER_EXTRA_VULN = true;
+  // 0: let the OS pick a free port
+  process.env.PORT = 0;
 
   // bring up the demo server
   const demoApp = require('../demo');
+  const port = demoApp.address().port;
 
   // wait to let the agent go through a cycle
   await sleep(BEACON_INTERVAL_MS);
 
   // trigger the vuln method
-  await needle.get('http://localhost:3000/hello.txt');
+  await needle.get(`http://localhost:${port}/hello.txt`);
 
   // wait to let the agent go through a cycle
   await sleep(BEACON_INTERVAL_MS);
@@ -167,7 +170,7 @@ test('demo app reports a vuln method when called', async (t) => {
   await sleep(SNAPSHOT_INTERVAL_MS - BEACON_INTERVAL_MS * 2);
 
   // trigger the vuln method again
-  await needle.get('http://localhost:3000/hello.txt');
+  await needle.get(`http://localhost:${port}/hello.txt`);
 
   // wait to let the agent go through another cycle with a new snapshot
   await sleep(BEACON_INTERVAL_MS);
@@ -182,6 +185,7 @@ test('demo app reports a vuln method when called', async (t) => {
   delete process.env.SNYK_BEACON_INTERVAL_MS;
   delete process.env.SNYK_SNAPSHOT_INTERVAL_MS;
   delete process.env.SNYK_TRIGGER_EXTRA_VULN;
+  delete process.env.PORT;
 
   await new Promise((resolve) => demoApp.close(resolve));
 });
