@@ -34,19 +34,19 @@
   "author": "snyk.io",
   "license": "Proprietary; see LICENSE",
   "devDependencies": {
-    "eslint": "^5.0.0",
-    "nock": "^10.0.0",
-    "proxyquire": "^2.1.0",
-    "sinon": "^7.2.7",
+    "eslint": "^6.2.2",
+    "nock": "^10.0.6",
+    "proxyquire": "^2.1.3",
+    "sinon": "^7.4.1",
     "sleep-promise": "^8.0.1",
     "st": "^0.1.0",
     "tap": "^12.0.1"
   },
   "dependencies": {
     "acorn": "5.7.1",
-    "debug": "^4.0.1",
+    "debug": "^4.1.1",
     "needle": "^2.4.0",
     "semver": "^5.5.1",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.3"
   }
 }
