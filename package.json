@@ -16,7 +16,7 @@
   "scripts": {
     "dump": "node test/dump.js",
     "start": "node demo/index.js",
-    "test": "npm run lint && tap ./test/*.test.js -R spec",
+    "test": "npm run lint && tap --jobs 1 ./test/*.test.js -R spec",
     "lint": "eslint -c .eslintrc lib"
   },
   "keywords": [
