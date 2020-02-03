@@ -8,6 +8,11 @@ Use this package as a library in your application to monitor your dependencies a
 require('@snyk/nodejs-runtime-agent')({ projectId: <Your-Project-ID> });
 ```
 
+# Supported Node.js versions
+
+The Node.js Runtime Agent is tested on Node 8 and Node 10.
+Other versions are unsupported.
+
 # How to
 ```js
 require('@snyk/nodejs-runtime-agent')(config);
