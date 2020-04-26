@@ -27,7 +27,9 @@ test('test bootstrap +function method detection', function (t) {
 test('test clashing variable/function declaration', function (t) {
   const contents = `
 var foo;
-function foo() {
+{
+  function foo() {
+  }
 }
 `;
   const methods = ['foo'];
@@ -35,7 +37,7 @@ function foo() {
     contents, methods,
   );
   t.same(sorted(Object.keys(found)), sorted(methods));
-  t.equal(found[methods[0]].start.line, 3, 'foo');
+  t.equal(found[methods[0]].start.line, 4, 'foo');
   t.end();
 });
 
