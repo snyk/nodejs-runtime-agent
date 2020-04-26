@@ -17,7 +17,7 @@ cache:
   directories:
     - node_modules
 install:
-  - npm install
+  - npm ci
 script:
   - curl $SNAPSHOT_URL > lib/resources/functions.bundle.json
   - node -e "console.log(new Date().toUTCString())" > lib/resources/build-date.bundle
