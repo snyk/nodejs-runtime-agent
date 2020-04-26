@@ -6,13 +6,16 @@ const path = require('path');
 
 test('demo app reports a vuln method when called', async (t) => {
   const newSnapshotModificationDate = new Date();
-
+  let snapshotSentResolve;
+  const snapshotSentPromise = new Promise(resolve => {
+    snapshotSentResolve = resolve;
+  });
   // first call will have one event triggered when the demo starts
   nock('http://localhost:8000')
     .post('/api/v1/beacon')
     .reply(200, (uri, requestBody) => {
       // assert the expected beacon data
-      const beaconData = JSON.parse(requestBody);
+      const beaconData = typeof requestBody === 'string' ? JSON.parse(requestBody) : requestBody;
       t.ok(beaconData.projectId, 'projectId present in beacon data');
       t.ok(beaconData.agentId, 'agentId present in beacon data');
       t.ok(beaconData.systemInfo, 'systemInfo present in beacon data');
@@ -37,9 +40,8 @@ test('demo app reports a vuln method when called', async (t) => {
   nock('http://localhost:8000')
     .post('/api/v1/beacon')
     .reply(200, (uri, requestBody) => {
-
       // assert the expected beacon data
-      const beaconData = JSON.parse(requestBody);
+      const beaconData = typeof requestBody === 'string' ? JSON.parse(requestBody) : requestBody;
       t.ok(beaconData.projectId, 'projectId present in beacon data');
       t.ok(beaconData.agentId, 'agentId present in beacon data');
       t.ok(beaconData.systemInfo, 'systemInfo present in beacon data');
@@ -97,6 +99,7 @@ test('demo app reports a vuln method when called', async (t) => {
       };
       const newSnapshot = baseVulnerableFunctions;
       newSnapshot.push(newlyDiscoveredVulnerability);
+      snapshotSentResolve();
       return newSnapshot;
     }, {'Last-Modified': newSnapshotModificationDate.toUTCString()});
 
@@ -105,13 +108,12 @@ test('demo app reports a vuln method when called', async (t) => {
   .post('/api/v1/beacon')
   .reply(200, (uri, requestBody) => {
     // assert the expected beacon data
-    const beaconData = JSON.parse(requestBody);
+    const beaconData = typeof requestBody === 'string' ? JSON.parse(requestBody) : requestBody;
     t.ok(beaconData.projectId, 'projectId present in beacon data');
     t.ok(beaconData.agentId, 'agentId present in beacon data');
     t.ok(beaconData.systemInfo, 'systemInfo present in beacon data');
     t.ok(!('error' in beaconData.systemInfo), 'systemInfo has no errors');
     t.ok(beaconData.eventsToSend, 'eventsToSend present in beacon data');
-
     t.equal(beaconData.eventsToSend.length, 3, '3 events sent');
     const methodNames = [];
     methodNames.push(beaconData.eventsToSend[0].methodEntry.methodName);
@@ -164,7 +166,7 @@ test('demo app reports a vuln method when called', async (t) => {
   await sleep(BEACON_INTERVAL_MS);
 
   // wait until we refresh the snapshot
-  await sleep(SNAPSHOT_INTERVAL_MS - BEACON_INTERVAL_MS * 2);
+  await snapshotSentPromise;
 
   // trigger the vuln method again
   await needle.get(`http://localhost:${port}/hello.txt`);

@@ -24,7 +24,7 @@ test('function declaration variations', async (t) => {
   nock('http://localhost:8000')
     .post('/api/v1/beacon')
     .reply(200, (uri, requestBody) => {
-      const beaconData = JSON.parse(requestBody);
+      const beaconData = typeof requestBody === 'string' ? JSON.parse(requestBody) : requestBody;
       t.ok(beaconData.eventsToSend, 'eventsToSend present in beacon data');
       t.equal(beaconData.eventsToSend.length, 0, 'no events sent');
     });
@@ -32,7 +32,7 @@ test('function declaration variations', async (t) => {
   nock('http://localhost:8000')
     .post('/api/v1/beacon')
     .reply(200, (uri, requestBody) => {
-      const beaconData = JSON.parse(requestBody);
+      const beaconData = typeof requestBody === 'string' ? JSON.parse(requestBody) : requestBody;
       t.ok(beaconData.eventsToSend, 'eventsToSend present in beacon data');
       t.equal(beaconData.eventsToSend.length, 8, 'no events sent');
       t.equal(beaconData.eventsToSend[0].methodEntry.methodName, 'one-liner.f', 'one-liner method detected');
