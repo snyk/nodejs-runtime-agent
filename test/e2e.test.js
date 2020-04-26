@@ -167,7 +167,7 @@ test('demo app reports a vuln method when called', async (t) => {
 
   // wait until we refresh the snapshot
   await snapshotSentPromise;
-
+  await sleep(100); // race in node 12
   // trigger the vuln method again
   await needle.get(`http://localhost:${port}/hello.txt`);
 
